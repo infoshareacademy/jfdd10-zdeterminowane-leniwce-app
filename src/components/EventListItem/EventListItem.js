@@ -5,17 +5,26 @@ import './EventListItem.css';
 class EventListItem extends Component {
 
   static defaultProps = {
-    eventIcon: '/event-icons/PH.png',
+    eventIcon: 'https://static.thenounproject.com/png/656-200.png',
     eventTitle: 'TITLE MISSING',
     eventDescription: 'DESCRIPTION MISSING',
   }
   
   static propTypes = {
+    /**
+     * Event icon url adress
+     */
     eventIcon: PropTypes.string,
+    /**
+     * Title for the event 
+     */
     eventTitle: PropTypes.string,
+    /**
+     * Description for the event 
+     */
     eventDescription: PropTypes.string,
   }
-  
+
   render() {
     return (
       <>
