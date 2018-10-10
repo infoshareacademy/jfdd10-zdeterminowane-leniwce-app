@@ -1,0 +1,23 @@
+.item-container {
+  border: 2px solid black;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.img-container {
+  border: 1px solid black;
+  margin: 1% 0 1% 1%;
+}
+
+.text-container {
+  margin: 0 2%;
+}
+
+.button-container {
+  margin: auto 2% auto 0;
+}
+
+.button-details {
+  height: 50%;
+  font-size: 1em;
+}
