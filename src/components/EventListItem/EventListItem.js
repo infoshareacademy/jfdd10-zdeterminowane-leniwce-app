@@ -4,27 +4,16 @@ import './EventListItem.css';
 
 class EventListItem extends Component {
 
-  state = {
-    id: 1,
-    img: '/event-icons/PH.png',
-    title: 'event one title',
-    description: 'short description for event number one',
-
-
-  }
-
-
-
   render() {
     return (
       <>
         <div className='item'>
-          <img src={this.state.img} alt='event icon' />
+          <img src={this.props.eventIcon} alt='event icon' />
           <div>
-            <h1>{this.state.title}</h1>
-            <p>{this.state.description}</p>
+            <h1>{this.props.eventTitle}</h1>
+            <p>{this.props.eventDescription}</p>
           </div>
-          <div>SHOW DETAILS</div>
+          <button>SHOW DETAILS</button>
 
         </div>
 
