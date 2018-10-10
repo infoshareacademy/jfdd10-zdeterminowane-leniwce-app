@@ -6,7 +6,7 @@ class EventListItem extends Component {
   state = {
     id: 1,
     img: '/event-icons/PH.png',
-    title: 'event one',
+    title: 'event one title',
     description: 'short description for event number one',
 
 
@@ -16,10 +16,15 @@ class EventListItem extends Component {
   render() {
     return (
       <>
-        <div>event item</div>
-        <div>{this.state.title}</div>
-        <img src={this.state.img} alt='event icon' />
-        <div>{this.state.description}</div>
+        <div className='item'>
+          <img src={this.state.img} alt='event icon' />
+          <div>
+            <h1>{this.state.title}</h1>
+            <p>{this.state.description}</p>
+          </div>
+
+        </div>
+
 
       </>
     )
