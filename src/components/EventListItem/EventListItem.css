@@ -1,6 +1,7 @@
 .item-container {
   border: 2px solid black;
   display: flex;
+  box-sizing: border-box;
 }
 
 .img-container {
@@ -13,7 +14,7 @@
 }
 
 .button-container {
-  margin: auto 0;
+  margin: auto 2% auto 0;
 }
 
 .button-details {
