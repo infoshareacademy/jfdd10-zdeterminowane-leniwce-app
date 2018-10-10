@@ -7,17 +7,20 @@ class EventListItem extends Component {
   render() {
     return (
       <>
-        <div className='item'>
-          <img src={this.props.eventIcon} alt='event icon' />
-          <div>
+        <div className='item-container'>
+          <div className='img-container'>
+            <img src={this.props.eventIcon} alt='event icon' />
+          </div>
+
+          <div className='text-container'>
             <h1>{this.props.eventTitle}</h1>
             <p>{this.props.eventDescription}</p>
           </div>
-          <button>SHOW DETAILS</button>
 
+          <div className='button-container'>
+            <button className='button-details'>SHOW DETAILS</button>
+          </div>
         </div>
-
-
       </>
     )
   }
