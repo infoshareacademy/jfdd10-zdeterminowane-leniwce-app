@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './EventListItem.css';
 
 class EventListItem extends Component {
@@ -11,6 +12,7 @@ class EventListItem extends Component {
 
 
   }
+
 
 
   render() {
@@ -30,6 +32,18 @@ class EventListItem extends Component {
       </>
     )
   }
+}
+
+EventListItem.defaultProps = {
+  img: '/event-icons/PH.png',
+  title: 'TITLE MISSING',
+  description: 'DESCRIPTION MISSING',
+}
+
+EventListItem.propTypes = {
+  img: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
 }
 
 export default EventListItem
