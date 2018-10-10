@@ -35,15 +35,15 @@ class EventListItem extends Component {
 }
 
 EventListItem.defaultProps = {
-  img: '/event-icons/PH.png',
-  title: 'TITLE MISSING',
-  description: 'DESCRIPTION MISSING',
+  eventIcon: '/event-icons/PH.png',
+  eventTitle: 'TITLE MISSING',
+  eventDescription: 'DESCRIPTION MISSING',
 }
 
 EventListItem.propTypes = {
-  img: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
+  eventIcon: PropTypes.string,
+  eventTitle: PropTypes.string,
+  eventDescription: PropTypes.string,
 }
 
 export default EventListItem
