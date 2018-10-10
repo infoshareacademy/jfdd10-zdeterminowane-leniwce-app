@@ -4,6 +4,18 @@ import './EventListItem.css';
 
 class EventListItem extends Component {
 
+  static defaultProps = {
+    eventIcon: '/event-icons/PH.png',
+    eventTitle: 'TITLE MISSING',
+    eventDescription: 'DESCRIPTION MISSING',
+  }
+  
+  static propTypes = {
+    eventIcon: PropTypes.string,
+    eventTitle: PropTypes.string,
+    eventDescription: PropTypes.string,
+  }
+  
   render() {
     return (
       <>
@@ -26,16 +38,6 @@ class EventListItem extends Component {
   }
 }
 
-EventListItem.defaultProps = {
-  eventIcon: '/event-icons/PH.png',
-  eventTitle: 'TITLE MISSING',
-  eventDescription: 'DESCRIPTION MISSING',
-}
 
-EventListItem.propTypes = {
-  eventIcon: PropTypes.string,
-  eventTitle: PropTypes.string,
-  eventDescription: PropTypes.string,
-}
 
 export default EventListItem
