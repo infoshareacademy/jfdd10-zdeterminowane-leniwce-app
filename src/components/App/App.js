@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import EventListItem from '../EventListItem/EventListItem'
 import './App.css';
+import EventList from '../EventList/EventList';
 
 class App extends Component {
+
+  
   render() {
     return (
       <>
-        <EventListItem />
+        <EventList />
       </>
 
     );
