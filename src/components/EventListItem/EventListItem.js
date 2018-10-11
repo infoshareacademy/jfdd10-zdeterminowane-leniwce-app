@@ -30,7 +30,7 @@ class EventListItem extends Component {
       <>
         <div className='item-container'>
           <div className='img-container'>
-            <img src={this.props.eventIcon} alt='event icon' />
+            <img className='img' src={this.props.eventIcon} alt='event icon' />
           </div>
 
           <div className='text-container'>
