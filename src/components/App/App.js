@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EventList from '../EventList/EventList';
+import HomeView from '../EventList/EventList';
 import './App.css';
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className='app-container'>
         <h1>Lazyness Radar</h1>
-        <EventList eventsData={this.state.events} />
+        <HomeView eventsData={this.state.events} />
       </div>
 
     );
