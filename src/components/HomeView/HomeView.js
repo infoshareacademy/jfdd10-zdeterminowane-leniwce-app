@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EventSearcher from '../EventSearcherResults/EventSearcherResults'
+import EventSearcher from '../EventSearcher/EventSearcher'
 
 class HomeView extends Component {
 
@@ -8,7 +8,7 @@ class HomeView extends Component {
   render() {
     return (
       <>
-        <EventSearcher />
+        <EventSearcher eventsData={this.props.eventsData}/>
 
       </>
     )

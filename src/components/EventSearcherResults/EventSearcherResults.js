@@ -9,7 +9,7 @@ class EventSearcherResults extends Component {
   render() {
     return (
       <>
-        <EventList />
+        <EventList eventsData={this.props.eventsData}/>
 
       </>
     )

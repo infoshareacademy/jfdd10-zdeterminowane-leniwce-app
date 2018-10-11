@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomeView from '../EventList/EventList';
+import HomeView from '../HomeView/HomeView';
 import './App.css';
 
 class App extends Component {
