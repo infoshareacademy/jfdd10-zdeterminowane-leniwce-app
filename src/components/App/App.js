@@ -8,6 +8,8 @@ class App extends Component {
     events: [],
   }
 
+  
+
   componentDidMount() {
     fetch('/data-storage/events.json').then(
       response => response.json()
