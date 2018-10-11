@@ -3,12 +3,15 @@ import EventSearcherResults from '../EventSearcherResults/EventSearcherResults'
 
 class EventSearcher extends Component {
 
- 
+  state = {
+    searchQuery: 'spirit'
+  }
+
 
   render() {
     return (
       <>
-        <EventSearcherResults eventsData={this.props.eventsData}/>
+        <EventSearcherResults eventsData={this.props.eventsData} />
 
       </>
     )
