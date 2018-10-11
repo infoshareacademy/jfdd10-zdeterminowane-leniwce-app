@@ -8,7 +8,7 @@ class App extends Component {
     events: [],
   }
 
-  
+
 
   componentDidMount() {
     fetch('/data-storage/events.json').then(
@@ -20,9 +20,10 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <EventList eventsData={this.state.events}/>
-      </>
+      <div className='app-container'>
+        <h1>Lazyness Radar</h1>
+        <EventList eventsData={this.state.events} />
+      </div>
 
     );
   }
