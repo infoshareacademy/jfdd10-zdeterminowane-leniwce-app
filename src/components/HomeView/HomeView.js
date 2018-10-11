@@ -8,7 +8,7 @@ class HomeView extends Component {
   render() {
     return (
       <>
-        <EventSearcher eventsData={this.props.eventsData}/>
+        <EventSearcher />
 
       </>
     )
