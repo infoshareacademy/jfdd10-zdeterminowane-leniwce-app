@@ -6,7 +6,7 @@ class EventSearcher extends Component {
 
   state = {
     events: [],
-    searchQuery: 'this needs to change'
+    searchQuery: ''
   }
 
   setSearchQuery = (query) =>
@@ -26,8 +26,16 @@ class EventSearcher extends Component {
   render() {
     return (
       <>
-        <EventSearcherForm getSearchQuery={this.setSearchQuery}/>
-        <p>{this.state.searchQuery}</p>
+        <EventSearcherForm getSearchQuery={this.setSearchQuery} />
+        
+        {
+          this.state.searchQuery &&
+          <p>
+            Searched for: &nbsp;<span>{this.state.searchQuery}</span>
+          </p>
+        }
+
+
         <EventSearcherResults eventsData={this.state.events} />
 
       </>
