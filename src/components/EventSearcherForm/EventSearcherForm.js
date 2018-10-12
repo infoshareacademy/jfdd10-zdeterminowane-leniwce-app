@@ -10,7 +10,9 @@ class EventSearcherForm extends Component {
   handleQueryChange = event => {
     this.setState({
       query: event.target.value
-    })
+    },
+      () => this.props.getSearchQuery(this.state.query)
+    )
   }
 
   preventSubmit = event => {
