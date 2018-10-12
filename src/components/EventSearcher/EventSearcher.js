@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import EventSearcherResults from '../EventSearcherResults/EventSearcherResults'
+import EventSearcherForm from '../EventSearcherForm/EventSearcherForm';
 
 class EventSearcher extends Component {
 
   state = {
     events: [],
-    searchQuery: 'spirit'
+    searchQuery: 'this needs to change'
   }
+
+  setSearchQuery = (query) =>
+    this.setState({
+      searchQuery: query
+    })
 
   componentDidMount() {
     fetch('/data-storage/events.json').then(
@@ -20,6 +26,8 @@ class EventSearcher extends Component {
   render() {
     return (
       <>
+        <EventSearcherForm getSearchQuery={this.setSearchQuery}/>
+        <p>{this.state.searchQuery}</p>
         <EventSearcherResults eventsData={this.state.events} />
 
       </>
