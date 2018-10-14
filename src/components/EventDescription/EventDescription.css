@@ -1,0 +1,6 @@
+.event__description{
+  display: flex;
+}
+.event__description--text{
+  margin-left: 30px;
+}
