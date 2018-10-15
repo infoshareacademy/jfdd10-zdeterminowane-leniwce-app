@@ -1,0 +1,15 @@
+.main-profil {
+  display: flex;
+}
+
+.name {
+  padding: 20px 30px;
+}
+
+.surname {
+  padding: 20px 30px;
+}
+
+.description {
+  padding-top: 20px;
+}
