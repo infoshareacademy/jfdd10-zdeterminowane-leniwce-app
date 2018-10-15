@@ -8,6 +8,7 @@ class HomeView extends Component {
   render() {
     return (
       <>
+        
         <EventSearcher />
 
       </>

@@ -14,6 +14,9 @@ class App extends Component {
       <div className='app-container'>
         <h1>Lazyness Radar</h1>
         <HomeView  />
+        <h1>KOmponent 1</h1>
+        <h1>KOmponent 2</h1>
+        <h1>KOmponent 3</h1>
       </div>
 
     );
