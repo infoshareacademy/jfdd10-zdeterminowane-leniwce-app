@@ -22,11 +22,16 @@ class EventSearcher extends Component {
     );
   }
 
-  getFilteredEvents = () => this.state.events.filter((event) => {
-      let eventTitle = event.title.toLowerCase();
-      let eventDescription = event.description.toLowerCase();
-      return eventTitle.includes(this.state.query.toLowerCase()) || eventDescription.includes(this.state.query.toLowerCase())
-    })
+  // getFilteredEvents2 = () => this.state.events.filter((event) => {
+  //     let eventTitle = event.title.toLowerCase();
+  //     let eventDescription = event.description.toLowerCase();
+  //     return eventTitle.includes(this.state.query.toLowerCase()) || eventDescription.includes(this.state.query.toLowerCase())
+  //   })
+
+  getFilteredEvents = () => this.state.events.filter(
+    event => [event.title, event.description].map(
+      phrase => phrase.toLowerCase()
+      ).some(phrase => phrase.includes(this.state.query.toLocaleLowerCase())))
   
 
 
