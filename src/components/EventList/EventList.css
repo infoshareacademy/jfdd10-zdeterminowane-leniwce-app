@@ -1,0 +1,9 @@
+.event-list-container>h1 {
+  text-align: center;
+}
+
+.event-list {
+  border: 2px solid red;
+  max-height: 800px;
+  overflow-y: scroll
+}
