@@ -1,0 +1,15 @@
+.UserPersonalData-main-profil {
+  display: flex;
+}
+
+.UserPersonalData-name {
+  padding: 20px 30px;
+}
+
+.UserPersonalData-surname {
+  padding: 20px 30px;
+}
+
+.UserPersonalData-description {
+  padding-top: 20px;
+}
