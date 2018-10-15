@@ -28,7 +28,6 @@ class EventList extends Component {
     return (
       <>
         <div className='event-list-container'>
-          <h1>Event List</h1>
 
           <div className='event-list'>
             {
