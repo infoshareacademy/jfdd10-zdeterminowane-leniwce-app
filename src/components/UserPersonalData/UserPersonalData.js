@@ -5,14 +5,14 @@ class UserPersonalData extends Component {
   render() {
     return (
       <div>
-        <div className="main-profil">
+        <div className="UserPersonalData-main-profil">
           <img src={this.props.user.avatar} alt="" />
-          <div className="personalData">
-            <div className="name">{this.props.user.name}</div>
-            <div className="surname">{this.props.user.surname}</div>
+          <div className="UserPersonalData-personal-data">
+            <div className="UserPersonalData-name">{this.props.user.name}</div>
+            <div className="UserPersonalData-surname">{this.props.user.surname}</div>
           </div>
         </div>
-        <div className="description">{this.props.user.description}</div>
+        <div className="UserPersonalData-description">{this.props.user.description}</div>
       </div>
     );
   }

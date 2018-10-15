@@ -1,15 +1,15 @@
-.main-profil {
+.UserPersonalData-main-profil {
   display: flex;
 }
 
-.name {
+.UserPersonalData-name {
   padding: 20px 30px;
 }
 
-.surname {
+.UserPersonalData-surname {
   padding: 20px 30px;
 }
 
-.description {
+.UserPersonalData-description {
   padding-top: 20px;
 }
