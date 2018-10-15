@@ -15,6 +15,14 @@ class EventSearcherResults extends Component {
       <>
         <div>
           <h1>Event List</h1>
+
+          {
+            this.props.searchQuery &&
+            <p>
+              Searched for: &nbsp;<span>{this.props.searchQuery}</span>
+            </p>
+          }
+
           <EventList eventsData={this.props.eventsData} />
 
         </div>

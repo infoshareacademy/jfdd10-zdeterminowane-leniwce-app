@@ -6,12 +6,12 @@ class EventSearcher extends Component {
 
   state = {
     events: [],
-    searchQuery: ''
+    query: '',
   }
 
   setSearchQuery = (query) =>
     this.setState({
-      searchQuery: query
+      query: query
     })
 
   componentDidMount() {
@@ -22,21 +22,21 @@ class EventSearcher extends Component {
     );
   }
 
+  getFilteredEvents = () => this.state.events.filter((event) => {
+      let eventTitle = event.title.toLowerCase()
+      return eventTitle.includes(this.state.query)
+    })
+  
+
 
   render() {
     return (
       <>
         <EventSearcherForm getSearchQuery={this.setSearchQuery} />
+    
         
-        {
-          this.state.searchQuery &&
-          <p>
-            Searched for: &nbsp;<span>{this.state.searchQuery}</span>
-          </p>
-        }
 
-
-        <EventSearcherResults eventsData={this.state.events} />
+        <EventSearcherResults eventsData={this.getFilteredEvents()} searchQuery={this.state.query}/>
 
       </>
     )
