@@ -23,8 +23,9 @@ class EventSearcher extends Component {
   }
 
   getFilteredEvents = () => this.state.events.filter((event) => {
-      let eventTitle = event.title.toLowerCase()
-      return eventTitle.includes(this.state.query)
+      let eventTitle = event.title.toLowerCase();
+      let eventDescription = event.description.toLowerCase();
+      return eventTitle.includes(this.state.query.toLowerCase()) || eventDescription.includes(this.state.query.toLowerCase())
     })
   
 
