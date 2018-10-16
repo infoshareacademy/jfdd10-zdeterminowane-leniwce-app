@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import EventListItem from '../EventListItem/EventListItem';
-import { Link } from "react-router-dom";
 
 import PropTypes from 'prop-types';
 
@@ -34,10 +33,10 @@ class EventList extends Component {
             event => (
               <div className='event-list-item-wrapper' key={event.id}>
                 
-                  <EventListItem eventIcon={event.url} eventTitle={event.title} eventDescription={event.description} />
+                  <EventListItem eventIcon={event.url} id={event.id} eventTitle={event.title} eventDescription={event.description} />
                 
                 <div className='event-list-item-show'>
-                  <Link to={`/events/${event.id}`}>SHOW DETAILS</Link>
+                  
 
                 </div>
               </div>

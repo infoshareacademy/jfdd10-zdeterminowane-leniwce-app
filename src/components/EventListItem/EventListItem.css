@@ -1,15 +1,10 @@
-.item-container {
-  border: 2px solid black;
-  display: flex;
-  box-sizing: border-box;
-  flex-grow: 0.8;
-}
-
 .img-wrapper {
   border: 1px solid black;
   margin: 1% 0 1% 1%;
-  flex-grow: 0.2;
-  
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .img {
@@ -20,7 +15,7 @@
 
 .item-text-wrapper {
   margin: 0 2%;
-  flex-grow: 0.8;
-
+  flex-grow: 1;
+  
 }
 
