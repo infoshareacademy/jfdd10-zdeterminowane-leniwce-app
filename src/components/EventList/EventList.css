@@ -11,9 +11,7 @@
   align-items: center;
 }
 
-.event-list-item-description {
-  flex-grow: 0.8;
-}
+
 
 .event-list-item-show {
   flex-grow: 0.2;

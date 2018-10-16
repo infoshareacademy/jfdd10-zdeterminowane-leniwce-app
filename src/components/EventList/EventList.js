@@ -33,9 +33,9 @@ class EventList extends Component {
           this.props.eventsData.map(
             event => (
               <div className='event-list-item-wrapper' key={event.id}>
-                <div className='event-list-item-description'>
+                
                   <EventListItem eventIcon={event.url} eventTitle={event.title} eventDescription={event.description} />
-                </div>
+                
                 <div className='event-list-item-show'>
                   <Link to={`/events/${event.id}`}>SHOW DETAILS</Link>
 

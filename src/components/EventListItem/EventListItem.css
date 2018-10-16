@@ -2,14 +2,13 @@
   border: 2px solid black;
   display: flex;
   box-sizing: border-box;
-  justify-content: space-between;
+  flex-grow: 0.8;
 }
 
-.img-container {
+.img-wrapper {
   border: 1px solid black;
   margin: 1% 0 1% 1%;
-  width: 100px;
-  height: 100px;
+  flex-grow: 0.2;
   
 }
 
@@ -19,21 +18,9 @@
   object-fit: contain;
 }
 
-.text-container {
+.item-text-wrapper {
   margin: 0 2%;
-  flex-wrap: wrap;  
+  flex-grow: 0.8;
 
 }
 
-.text-container h1{
-  font-size: 2rem
-}
-
-.button-container {
-  margin: auto 2% auto 0;
-}
-
-.button-details {
-  height: 50%;
-  font-size: 1em;
-}

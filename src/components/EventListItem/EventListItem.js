@@ -9,7 +9,7 @@ class EventListItem extends Component {
     eventTitle: 'TITLE MISSING',
     eventDescription: 'DESCRIPTION MISSING',
   }
-  
+
   static propTypes = {
     /**
      * Event icon url adress
@@ -27,20 +27,16 @@ class EventListItem extends Component {
 
   render() {
     return (
-      <>
-        <div className='item-container'>
-          <div className='img-container'>
-            <img className='img' src={this.props.eventIcon} alt='event icon' />
-          </div>
-
-          <div className='text-container'>
-            <h1>{this.props.eventTitle}</h1>
-            <p>{this.props.eventDescription}</p>
-          </div>
-
-         
+      <div className='item-container'>
+        <div className='img-wrapper'>
+          <img className='img' src={this.props.eventIcon} alt='event icon' />
         </div>
-      </>
+
+        <div className='item-text-wrapper'>
+          <h1>{this.props.eventTitle}</h1>
+          <p>{this.props.eventDescription}</p>
+        </div>
+      </div>
     )
   }
 }
