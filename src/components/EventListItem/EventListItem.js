@@ -38,9 +38,7 @@ class EventListItem extends Component {
             <p>{this.props.eventDescription}</p>
           </div>
 
-          <div className='button-container'>
-            <button className='button-details'>SHOW DETAILS</button>
-          </div>
+         
         </div>
       </>
     )

@@ -1,9 +1,21 @@
-.event-list-container>h1 {
-  text-align: center;
-}
 
-.event-list {
+.event-list-container {
   border: 2px solid red;
   max-height: 800px;
   overflow-y: scroll
+}
+
+.event-list-item-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-list-item-description {
+  flex-grow: 0.8;
+}
+
+.event-list-item-show {
+  flex-grow: 0.2;
+  text-align: center;
 }

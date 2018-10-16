@@ -1,7 +1,14 @@
 .app-wrapper {
   display: flex;
-  justify-content: space-around;
   width: 90%;
+}
+
+.app-links {
+  flex-grow: 0.2;
+}
+
+.main-app-window {
+ flex-grow: 0.8;
 }
 
 .app-container {
