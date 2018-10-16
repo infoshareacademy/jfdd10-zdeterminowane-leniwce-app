@@ -8,7 +8,7 @@ class UserPersonalData extends Component {
       avatar: '',
       name: 'Jacek',
       surname: 'Noga',
-      description: 'Foobar masay'
+      description: 'Lorem Ipsum jest tekstem stosowanym jako przykładowy'
     }
   }
 
