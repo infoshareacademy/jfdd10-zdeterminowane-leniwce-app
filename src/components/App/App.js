@@ -31,9 +31,6 @@ class App extends Component {
                   <NavLink exact to='/'>Home Page</NavLink>
                 </p>
                 <p>
-                  <NavLink to="/searcher">Event Searcher</NavLink>
-                </p>
-                <p>
                   <NavLink to="/user">User Profile</NavLink>
                 </p>
                 <p>
@@ -43,8 +40,7 @@ class App extends Component {
               </div>
 
               <div className='main-app-window'>
-                <Route exact path="/" component={() => <h1>Hello</h1>} />
-                <Route path="/searcher" component={HomeView} />
+                <Route exact path="/" component={HomeView} />
                 {/* <Route path="/user" component={UserProfileView} /> */}
                 <Route path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} />
 
