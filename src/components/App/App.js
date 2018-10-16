@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 import HomeView from '../HomeView/HomeView';
+
+
+// import when done
+// import UserProfileView from '../UserProfileView/UserProfileView'
+// import EventView from '../EventView/EventView'
+
 import './App.css';
 
 class App extends Component {
@@ -27,19 +33,24 @@ class App extends Component {
                 <p>
                   <NavLink to="/searcher">Event Searcher</NavLink>
                 </p>
-
+                <p>
+                  <NavLink to="/user">User Profile</NavLink>
+                </p>
+                <p>
+                  <NavLink to="/event">Event View</NavLink>
+                </p>
 
               </div>
 
               <div className='main-app-window'>
                 <Route exact path="/" component={() => <h1>Hello</h1>} />
                 <Route path="/searcher" component={HomeView} />
+                {/* <Route path="/user" component={UserProfileView} /> */}
+                <Route path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} />
 
+                {/* <Route path="/event" component={EventView} /> */}
+                <Route path="/event" component={() => <h1> When EventView is ready, replace this in App</h1>}  />
 
-
-                <h1>KOmponent 1</h1>
-                <h1>KOmponent 2</h1>
-                <h1>KOmponent 3</h1>
               </div>
             </div>
 
