@@ -2,6 +2,16 @@ import React, { Component } from "react";
 import "./UserPersonalData.css";
 
 class UserPersonalData extends Component {
+  
+  static defaultProps = {
+    user: {
+      avatar: '',
+      name: 'Jacek',
+      surname: 'Noga',
+      description: 'Foobar masay'
+    }
+  }
+
   render() {
     return (
       <div>
