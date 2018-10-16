@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EventList from '../EventList/EventList'
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
 class EventSearcherResults extends Component {
