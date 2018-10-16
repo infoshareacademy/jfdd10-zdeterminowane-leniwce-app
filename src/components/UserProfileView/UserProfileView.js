@@ -9,9 +9,13 @@ class UserProfileView extends Component {
 
   render() {
     return (
-      <div>
+      <div className="UserProfileView-container">
+      <div className="UserPersonalData-container">
         <UserPersonalData></UserPersonalData>
+      </div>
+      <div className="UserEvents-container">
         <UserEvents></UserEvents>
+        </div>
       </div>
     );
   }
