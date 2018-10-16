@@ -22,18 +22,21 @@ class App extends Component {
 
               <div className='app-links'>
                 <p>
-                  <NavLink exact to='/'>
-                    Strona główna
-              </NavLink>
+                  <NavLink exact to='/'>Home Page</NavLink>
                 </p>
+                <p>
+                  <NavLink to="/searcher">Event Searcher</NavLink>
+                </p>
+
 
               </div>
 
               <div className='main-app-window'>
                 <Route exact path="/" component={() => <h1>Hello</h1>} />
+                <Route path="/searcher" component={HomeView} />
 
 
-                <HomeView />
+
                 <h1>KOmponent 1</h1>
                 <h1>KOmponent 2</h1>
                 <h1>KOmponent 3</h1>
