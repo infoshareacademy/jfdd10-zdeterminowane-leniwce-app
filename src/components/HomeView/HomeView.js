@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import EventSearcher from '../EventSearcher/EventSearcher'
-import UserProfileView from '../UserProfileView/UserProfileView'
+import { DataContextConsumer } from '../../contexts/DataContext';
 
 class HomeView extends Component {
 
- 
+
 
   render() {
     return (
       <>
-        <UserProfileView/>
-        <EventSearcher />
+        <DataContextConsumer>
+          {
+            ({ events }) => (
+              <EventSearcher eventsData={events} />
+            )
+          }
+        </DataContextConsumer>
+
+
       </>
     )
   }

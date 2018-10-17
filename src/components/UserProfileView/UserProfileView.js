@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./UserProfileView.css";
 import UserPersonalData from '../UserPersonalData/UserPersonalData'
 import UserEvents from '../UserEvents/UserEvents'
+import { DataContextConsumer } from '../../contexts/DataContext';
+
 
 class UserProfileView extends Component {
 
@@ -11,10 +13,18 @@ class UserProfileView extends Component {
     return (
       <div className="UserProfileView-container">
       <div className="UserPersonalData-container">
-        <UserPersonalData></UserPersonalData>
+        <UserPersonalData/>
       </div>
       <div className="UserEvents-container">
-        <UserEvents></UserEvents>
+
+
+      <DataContextConsumer>
+          {
+            ({ events }) => (
+              <UserEvents events={events} />
+            )
+          }
+        </DataContextConsumer>
         </div>
       </div>
     );

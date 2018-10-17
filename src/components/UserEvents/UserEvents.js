@@ -10,7 +10,7 @@ class UserEvents extends Component {
 
   render() {
     return (
-      <EventList></EventList>
+      <EventList eventsData={this.props.events}></EventList>
       
     );
   }

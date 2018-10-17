@@ -5,7 +5,6 @@ import EventSearcherForm from '../EventSearcherForm/EventSearcherForm';
 class EventSearcher extends Component {
 
   state = {
-    events: [],
     query: '',
   }
 
@@ -14,13 +13,7 @@ class EventSearcher extends Component {
       query: query
     })
 
-  componentDidMount() {
-    fetch('/data-storage/events.json').then(
-      response => response.json()
-    ).then(
-      events => this.setState({ events: events })
-    );
-  }
+  
 
   // getFilteredEvents2 = () => this.state.events.filter((event) => {
   //     let eventTitle = event.title.toLowerCase();
@@ -28,7 +21,7 @@ class EventSearcher extends Component {
   //     return eventTitle.includes(this.state.query.toLowerCase()) || eventDescription.includes(this.state.query.toLowerCase())
   //   })
 
-  getFilteredEvents = () => this.state.events.filter(
+  getFilteredEvents = () => this.props.eventsData.filter(
     event => [event.title, event.description].map(
       phrase => phrase.toLowerCase()
       ).some(phrase => phrase.includes(this.state.query.toLocaleLowerCase())))
@@ -40,8 +33,6 @@ class EventSearcher extends Component {
       <>
         <EventSearcherForm getSearchQuery={this.setSearchQuery} />
     
-        
-
         <EventSearcherResults eventsData={this.getFilteredEvents()} searchQuery={this.state.query}/>
 
       </>
