@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EventListItem from '../EventListItem/EventListItem';
+
 import PropTypes from 'prop-types';
 
 import './EventList.css';
@@ -26,24 +27,24 @@ class EventList extends Component {
 
   render() {
     return (
-      <>
-        <div className='event-list-container'>
+      <div className='event-list-container'>
+        {
+          this.props.eventsData.map(
+            event => (
+              <div className='event-list-item-wrapper' key={event.id}>
+                
+                  <EventListItem eventIcon={event.url} id={event.id} eventTitle={event.title} eventDescription={event.description} />
+                
+                <div className='event-list-item-show'>
+                  
 
-          <div className='event-list'>
-            {
-              this.props.eventsData.map(
-                event => (
-                  <EventListItem key={event.id} eventIcon={event.url} eventTitle={event.title} eventDescription={event.description} />
+                </div>
+              </div>
+            )
+          )
+        }
+      </div>
 
-                )
-              )
-            }
-
-
-          </div>
-        </div>
-
-      </>
     )
   }
 }
