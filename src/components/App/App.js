@@ -44,15 +44,15 @@ class App extends Component {
 
               <div className='main-app-window'>
                 <Route exact path="/" component={HomeView} />
-                {/* <Route path="/user" component={UserProfileView} /> */}
-                <Route path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} />
+                <Route path="/user" component={UserProfileView} />
+                {/* <Route path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} /> */}
 
                 {/* <Route path="/event" component={EventView} /> */}
                 <Route exact path="/events" component={() => <h1> When EventView is ready, replace this in App</h1>}  />
 
                 <Route path="/events/:eventId" component={() => <h1> When EventView is ready, replace this in App</h1>}  />
                 <EventParticipantMap/>
-                <UserProfileView/>
+                {/* <UserProfileView/> */}
               </div>
             </div>
 

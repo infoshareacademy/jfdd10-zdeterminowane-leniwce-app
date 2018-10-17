@@ -17,6 +17,14 @@ class HomeView extends Component {
           }
         </DataContextConsumer>
 
+         <UsersContextConsumer>
+          {
+            ({ users}) => (
+              <EventSearcher eventsData={users} />
+            )
+          }
+        </UsersContextConsumer>
+
 
       </>
     )
