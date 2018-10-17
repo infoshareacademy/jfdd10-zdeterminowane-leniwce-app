@@ -3,17 +3,17 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 import HomeView from '../HomeView/HomeView';
-import EventParticipantMap from '../EventParticipantMap/EventParticipantMap'
+// import EventParticipantMap from '../EventParticipantMap/EventParticipantMap'
 
 
 
 
 // import when done
 import UserProfileView from '../UserProfileView/UserProfileView'
-// import EventView from '../EventView/EventView'
+import EventView from '../EventView/EventView'
 
 import './App.css';
-import EventView from '../EventView/EventView';
+
 
 class App extends Component {
 

@@ -9,7 +9,7 @@ class EventDescription extends Component {
         <img className="EventDescription-image" src={this.props.photoUrl} alt=""
         /> 
           <div className="EventDescription-description--text">
-            {this.props.content}
+            {this.props.description}
           </div>
         </div>
         <div className="EventDescription-description--buttonarea">
