@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 import HomeView from '../HomeView/HomeView';
+import EventParticipantMap from '../EventParticipantMap/EventParticipantMap'
+
+
 
 
 // import when done
@@ -48,7 +51,7 @@ class App extends Component {
                 <Route exact path="/events" component={() => <h1> When EventView is ready, replace this in App</h1>}  />
 
                 <Route path="/events/:eventId" component={() => <h1> When EventView is ready, replace this in App</h1>}  />
-
+                <EventParticipantMap/>
               </div>
             </div>
 
