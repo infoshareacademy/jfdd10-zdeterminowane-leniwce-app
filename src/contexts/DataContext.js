@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 const DataContext = React.createContext();
 
+
 // export const DataProvider = DataContext.Provider
-export const DataContextConsumer = DataContext.Consumer;
+export const DataContextConsumer = DataContext.Consumer; 
 
 export class DataProvider extends Component {
   state = {
@@ -18,11 +19,11 @@ export class DataProvider extends Component {
     ).then(
       events => this.setState({ events: events })
     );
-    // fetch('/data-storage/users.json').then(
-    //   response => response.json()
-    // ).then(
-    //   users => this.setState({ users: users })
-    // );
+    fetch('/data-storage/users.json').then(
+      response => response.json()
+    ).then(
+      users => this.setState({ users: users })
+    );
   }
 
   render() {
