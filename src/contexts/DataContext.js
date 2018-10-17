@@ -8,7 +8,8 @@ export const DataContextConsumer = DataContext.Consumer;
 export class DataProvider extends Component {
   state = {
     events: [],
-    users: []
+    users: [],
+    getEvent: (eventId) => this.state.events.find(event => event.id === eventId)
   };
 
 
