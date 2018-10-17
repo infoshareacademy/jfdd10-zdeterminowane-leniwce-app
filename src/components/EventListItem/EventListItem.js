@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
 import PropTypes from 'prop-types';
 import './EventListItem.css';
 
@@ -9,7 +11,7 @@ class EventListItem extends Component {
     eventTitle: 'TITLE MISSING',
     eventDescription: 'DESCRIPTION MISSING',
   }
-  
+
   static propTypes = {
     /**
      * Event icon url adress
@@ -28,19 +30,13 @@ class EventListItem extends Component {
   render() {
     return (
       <>
-        <div className='item-container'>
-          <div className='img-container'>
-            <img className='img' src={this.props.eventIcon} alt='event icon' />
-          </div>
+        <div className='img-wrapper'>
+          <img className='img' src={this.props.eventIcon} alt='event icon' />
+        </div>
 
-          <div className='text-container'>
-            <h1>{this.props.eventTitle}</h1>
-            <p>{this.props.eventDescription}</p>
-          </div>
-
-          <div className='button-container'>
-            <button className='button-details'>SHOW DETAILS</button>
-          </div>
+        <div className='item-text-wrapper'>
+          <Link to={`/events/${this.props.id}`}><h1>{this.props.eventTitle}</h1></Link>
+          <p>{this.props.eventDescription}</p>
         </div>
       </>
     )

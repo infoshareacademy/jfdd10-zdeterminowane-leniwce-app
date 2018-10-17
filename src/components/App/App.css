@@ -1,4 +1,20 @@
-.app-container>h1 {
-  text-align: center;
+.app-wrapper {
+  display: flex;
+  width: 90%;
 }
 
+.app-links {
+  flex-grow: 0.2;
+}
+
+.main-app-window {
+ flex-grow: 0.8;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
