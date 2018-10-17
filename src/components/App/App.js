@@ -9,7 +9,7 @@ import EventParticipantMap from '../EventParticipantMap/EventParticipantMap'
 
 
 // import when done
-// import UserProfileView from '../UserProfileView/UserProfileView'
+import UserProfileView from '../UserProfileView/UserProfileView'
 // import EventView from '../EventView/EventView'
 
 import './App.css';
@@ -52,6 +52,7 @@ class App extends Component {
 
                 <Route path="/events/:eventId" component={() => <h1> When EventView is ready, replace this in App</h1>}  />
                 <EventParticipantMap/>
+                <UserProfileView/>
               </div>
             </div>
 

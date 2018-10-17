@@ -1,0 +1,9 @@
+.UserPersonalData-container{
+ height: 300px;
+ border: 2px solid black;
+}
+
+.UserEvents-container {
+  height: 300px;
+  border: 2px solid black;
+}

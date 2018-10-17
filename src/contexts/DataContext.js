@@ -7,7 +7,8 @@ export const DataContextConsumer = DataContext.Consumer;
 
 export class DataProvider extends Component {
   state = {
-    events: []
+    events: [],
+    users: []
   };
 
 
@@ -17,6 +18,11 @@ export class DataProvider extends Component {
     ).then(
       events => this.setState({ events: events })
     );
+    // fetch('/data-storage/users.json').then(
+    //   response => response.json()
+    // ).then(
+    //   users => this.setState({ users: users })
+    // );
   }
 
   render() {
