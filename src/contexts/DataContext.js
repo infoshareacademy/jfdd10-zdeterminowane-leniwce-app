@@ -10,7 +10,9 @@ export class DataProvider extends Component {
   state = {
     events: [],
     users: [],
-    getEvent: (eventId) => this.state.events.find(event => event.id === eventId)
+    getEvent: (eventId) => this.state.events.find(event => event.id === eventId),
+    getUser: (userId) => this.state.users.find(user => user.id === userId),
+
   };
 
 
