@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 
 
 class EventSearcherForm extends Component {
@@ -28,7 +29,7 @@ class EventSearcherForm extends Component {
           <h1>Event Searcher</h1>
           <form onSubmit={this.preventSubmit}>
             <input value={this.state.query} onChange={this.handleQueryChange} />
-            <button>Search</button>
+            <Button variant="contained">Search</Button>
 
           </form>
         </div>
