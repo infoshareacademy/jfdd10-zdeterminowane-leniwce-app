@@ -11,14 +11,18 @@ class UserProfileView extends Component {
         {({ getUser, events }) => {
              const userId = parseInt(this.props.match.params.userId)
              const user = getUser(userId)
- 
+             const userEventsIds = user && user.events
           return(
 <div className="UserProfileView-container">
             <div className="UserPersonalData-container">
               <UserPersonalData user={user}/>
             </div>
             <div className="UserEvents-container">
-              <UserEvents events={events} />
+          {user &&
+             user.events &&
+              userEventsIds &&
+                <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId))} />
+          }
             </div>
           </div>
 
