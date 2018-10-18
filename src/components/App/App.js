@@ -13,6 +13,7 @@ import UserProfileView from '../UserProfileView/UserProfileView'
 // import EventView from '../EventView/EventView'
 
 import './App.css';
+import EventView from '../EventView/EventView';
 
 class App extends Component {
 
@@ -48,11 +49,10 @@ class App extends Component {
                 {/* <Route path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} /> */}
 
                 {/* <Route path="/event" component={EventView} /> */}
-                <Route exact path="/events" component={() => <h1> When EventView is ready, replace this in App</h1>}  />
+                <Route exact path="/events" component={() => <h1> When EventView is ready, replace this in App</h1>} />
 
-                <Route path="/events/:eventId" component={() => <h1> When EventView is ready, replace this in App</h1>}  />
-                <EventParticipantMap/>
-                {/* <UserProfileView/> */}
+              
+                <Route path="/events/:eventId" component={EventView} />
               </div>
             </div>
 
