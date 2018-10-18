@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EventDescription from  '../EventDescription/EventDescription'
-import EventParticipantListItem from '../EventParticipantListItem/EventParticipantListItem'
 import EventParticipantMap from '../EventParticipantMap/EventParticipantMap'
+import EventParticipantList from '../EventParticipantList/EventParticipantList'
 
 
 
@@ -32,7 +32,7 @@ class EventView extends Component {
               
               <div>
                 <EventDescription description={event.description}/>
-                <EventParticipantListItem/>
+                <EventParticipantList/>
                 <EventParticipantMap/>
                 <h1>{event.title}</h1>
                 <p>{event.description}</p>
