@@ -4,6 +4,8 @@ import './index.css';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 import { DataProvider } from './contexts/DataContext';
+import 'typeface-roboto';
+
 
 ReactDOM.render(
   <DataProvider>
