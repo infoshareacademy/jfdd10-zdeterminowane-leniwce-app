@@ -33,7 +33,7 @@ class EventList extends Component {
             event => (
               <div className='event-list-item-wrapper' key={event.id}>
                 
-                  <EventListItem eventIcon={event.url} id={event.id} eventTitle={event.title} eventDescription={event.description} />
+                  <EventListItem eventIcon={event.icon} id={event.id} eventTitle={event.title} eventDescription={event.description} />
                 
                 <div className='event-list-item-show'>
                   
