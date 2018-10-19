@@ -36,7 +36,7 @@ class EventSearcher extends Component {
 
         <Grid container justify='center'>
 
-          <Grid item md={6} lg={6} sm>
+          <Grid item md={10} lg={8} sm>
             <EventSearcherResults eventsData={this.getFilteredEvents()} searchQuery={this.state.query} />
 
 
