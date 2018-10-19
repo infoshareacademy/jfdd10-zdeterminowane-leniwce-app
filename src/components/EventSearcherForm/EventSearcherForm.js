@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 import { TextField, Grid } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
 
 
 class EventSearcherForm extends Component {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import PropTypes from 'prop-types';
 import './EventListItem.css';
-import { ListItem, ListItemAvatar, Avatar, ListItemText, ListItemSecondaryAction, Button } from '@material-ui/core';
+import { ListItem, ListItemAvatar, Avatar, ListItemText } from '@material-ui/core';
 
 class EventListItem extends Component {
 

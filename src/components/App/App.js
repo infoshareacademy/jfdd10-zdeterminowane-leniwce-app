@@ -1,23 +1,10 @@
-
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-
 import HomeView from '../HomeView/HomeView';
-import EventParticipantMap from '../EventParticipantMap/EventParticipantMap'
-
-
-
-
-// import when done
 import UserProfileView from '../UserProfileView/UserProfileView'
-
 import EventView from '../EventView/EventView';
-import { AppBar, Toolbar, Typography, IconButton, Button, Menu, MenuItem } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-
-import './App.css';
-
-
 
 
 
@@ -54,8 +41,6 @@ class App extends Component {
 
     return (
       <>
-
-
         <Router>
           <div className={this.styles.root}>
             <AppBar className='appBar' position='static'>
@@ -104,17 +89,10 @@ class App extends Component {
 
               <Route path="/events/:eventId" component={EventView} />
             </main>
-
           </div>
-
-
-
         </Router>
       </>
-
-
     );
-
   }
 }
 
