@@ -23,6 +23,7 @@ class EventSearcherForm extends Component {
     this.props.getSearchQuery(this.state.query);
   }
 
+  //change icon in search field!!!!
 
   render() {
     return (
