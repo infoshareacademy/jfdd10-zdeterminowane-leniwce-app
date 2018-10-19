@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import PropTypes from 'prop-types';
 import './EventListItem.css';
+import { ListItem, ListItemAvatar, Avatar, ListItemText, ListItemSecondaryAction, Button } from '@material-ui/core';
 
 class EventListItem extends Component {
 
@@ -30,14 +31,22 @@ class EventListItem extends Component {
   render() {
     return (
       <>
-        <div className='img-wrapper'>
-          <img className='img' src={this.props.eventIcon} alt='event icon' />
-        </div>
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar src={this.props.eventIcon} />
+          </ListItemAvatar>
 
-        <div className='item-text-wrapper'>
-          <Link to={`/events/${this.props.id}`}><h1>{this.props.eventTitle}</h1></Link>
-          <p>{this.props.eventDescription}</p>
-        </div>
+          <ListItemText
+            primary={this.props.eventTitle}
+            secondary={this.props.eventDescription}
+          />
+          <ListItemSecondaryAction>
+            <Button>
+              <Link to={`/events/${this.props.id}`}></Link>
+            </Button>
+
+          </ListItemSecondaryAction>
+        </ListItem>
       </>
     )
   }
