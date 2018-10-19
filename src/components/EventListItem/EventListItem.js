@@ -38,11 +38,13 @@ class EventListItem extends Component {
         to={`/events/${this.props.id}`}
         >
           <ListItemAvatar>
-            <Avatar src={this.props.eventIcon} />
+            <Avatar src={this.props.eventIcon}  />
           </ListItemAvatar>
 
           <ListItemText
+          primaryTypographyProps={{variant: 'h4'}}
             primary={this.props.eventTitle}
+            secondaryTypographyProps={{variant: 'subheading'}}
             secondary={this.props.eventDescription}
           />
           
