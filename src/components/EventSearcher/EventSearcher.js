@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EventSearcherResults from '../EventSearcherResults/EventSearcherResults'
 import EventSearcherForm from '../EventSearcherForm/EventSearcherForm';
-import { Grid } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 
 class EventSearcher extends Component {
 
@@ -37,7 +37,10 @@ class EventSearcher extends Component {
         <Grid container justify='center'>
 
           <Grid item md={10} lg={8} sm>
+          <Paper>
+
             <EventSearcherResults eventsData={this.getFilteredEvents()} searchQuery={this.state.query} />
+          </Paper>
 
 
           </Grid>

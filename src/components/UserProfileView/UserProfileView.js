@@ -3,7 +3,7 @@ import "./UserProfileView.css";
 import UserPersonalData from "../UserPersonalData/UserPersonalData";
 import UserEvents from "../UserEvents/UserEvents";
 import { DataContextConsumer } from "../../contexts/DataContext";
-import { Grid } from "@material-ui/core";
+import { Grid, Paper } from "@material-ui/core";
 
 class UserProfileView extends Component {
   render() {
@@ -25,17 +25,17 @@ class UserProfileView extends Component {
           return (
             <Grid container justify='center'>
               <Grid item sm md={10} lg={8}>
-                <div className="UserPersonalData-container">
-                  <UserPersonalData user={user} />
-                </div>
+              <Paper>
 
-                <div className="UserEvents-container">
+
+                  <UserPersonalData user={user} />
+
                   {user &&
                     user.events &&
                     userEventsIds &&
                     <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId))} />
                   }
-                </div>
+              </Paper>
               </Grid>
             </Grid>
 

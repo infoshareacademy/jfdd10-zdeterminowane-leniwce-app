@@ -15,7 +15,6 @@ import EventView from '../EventView/EventView';
 import { AppBar, Toolbar, Typography, IconButton, Button, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import Paper from '@material-ui/core/Paper';
 import './App.css';
 
 
