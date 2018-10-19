@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EventSearcherResults from '../EventSearcherResults/EventSearcherResults'
 import EventSearcherForm from '../EventSearcherForm/EventSearcherForm';
+import { Grid } from '@material-ui/core';
 
 class EventSearcher extends Component {
 
@@ -13,7 +14,7 @@ class EventSearcher extends Component {
       query: query
     })
 
-  
+
 
   // getFilteredEvents2 = () => this.state.events.filter((event) => {
   //     let eventTitle = event.title.toLowerCase();
@@ -24,16 +25,24 @@ class EventSearcher extends Component {
   getFilteredEvents = () => this.props.eventsData.filter(
     event => [event.title, event.description].map(
       phrase => phrase.toLowerCase()
-      ).some(phrase => phrase.includes(this.state.query.toLocaleLowerCase())))
-  
+    ).some(phrase => phrase.includes(this.state.query.toLocaleLowerCase())))
+
 
 
   render() {
     return (
       <>
         <EventSearcherForm getSearchQuery={this.setSearchQuery} />
-    
-        <EventSearcherResults eventsData={this.getFilteredEvents()} searchQuery={this.state.query}/>
+
+        <Grid container justify='center'>
+
+          <Grid item md={6} lg={6} sm>
+            <EventSearcherResults eventsData={this.getFilteredEvents()} searchQuery={this.state.query} />
+
+
+          </Grid>
+        </Grid>
+
 
       </>
     )
