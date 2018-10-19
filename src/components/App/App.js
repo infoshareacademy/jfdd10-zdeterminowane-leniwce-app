@@ -10,54 +10,105 @@ import EventParticipantMap from '../EventParticipantMap/EventParticipantMap'
 
 // import when done
 import UserProfileView from '../UserProfileView/UserProfileView'
-// import EventView from '../EventView/EventView'
 
-import './App.css';
 import EventView from '../EventView/EventView';
+import { AppBar, Toolbar, Typography, IconButton, Button, Menu, MenuItem } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+
+import Paper from '@material-ui/core/Paper';
+import './App.css';
+
+
+
+
 
 class App extends Component {
 
+  styles = {
+    root: {
+      flexGrow: 1,
+    },
+    grow: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginLeft: -12,
+      marginRight: 20,
+    },
+  };
+
+  state = {
+    anchorEl: null,
+  };
+
+  handleClick = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
 
 
   render() {
+    const { anchorEl } = this.state;
 
     return (
       <>
 
 
         <Router>
-          <div className='app-container'>
-            <h1>Lazyness Radar</h1>
-            <div className='app-wrapper'>
+          <div className={this.styles.root}>
+            <AppBar className='appBar' position='static'>
+              <Toolbar>
+                <IconButton className={this.styles.menuButton} color="inherit" aria-label="Menu" aria-owns={anchorEl ? 'simple-menu' : null}
+                  aria-haspopup="true"
+                  onClick={this.handleClick}>
+                  <MenuIcon>
+                  </MenuIcon>
+                </IconButton>
 
-              <div className='app-links'>
-                <p>
-                  <NavLink exact to='/'>Home Page</NavLink>
-                </p>
-                <p>
-                  <NavLink to="/user">User Profile</NavLink>
-                </p>
-                
+                <Typography variant="h6" color="inherit" className={this.styles.grow}>
+                  Lazyness Radar
+                </Typography>
+                <Typography variant="h6" color="inherit" noWrap>
+                </Typography>
+                <Typography variant="h6" color="inherit" noWrap>
+                </Typography>
+              </Toolbar>
+            </AppBar>
 
-              </div>
-
-              <div className='main-app-window'>
-                <Route exact path="/" component={HomeView} />
-                {/* <Route path="/user" component={UserProfileView} /> */}
-                <Route exact path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} />
-
-                {/* <Route path="/event" component={EventView} /> */}
-                <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
-
-                <Route path="/user/:userId" component={UserProfileView} />
-
-                <Route path="/events/:eventId" component={EventView} />
-              </div>
-            </div>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={this.handleClose}
+            >
+              <MenuItem onClick={this.handleClose}>
+                <NavLink exact to='/'>Home Page</NavLink>
+              </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                <NavLink to="/user/1">User Profile</NavLink>
+              </MenuItem>
+            </Menu>
 
 
+            <main className='content'>
+              <Route exact path="/" component={HomeView} />
+              {/* <Route path="/user" component={UserProfileView} /> */}
+              <Route exact path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} />
+
+              {/* <Route path="/event" component={EventView} /> */}
+              <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
+
+              <Route path="/user/:userId" component={UserProfileView} />
+
+              <Route path="/events/:eventId" component={EventView} />
+            </main>
 
           </div>
+
+
 
         </Router>
       </>
