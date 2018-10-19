@@ -34,13 +34,21 @@ class EventSearcher extends Component {
       <>
         <EventSearcherForm getSearchQuery={this.setSearchQuery} />
 
+        {
+          this.state.query &&
+          <p>
+            Searched for: &nbsp;<span>{this.state.query}</span>
+          </p>
+        }
+
+
         <Grid container justify='center'>
 
           <Grid item md={10} lg={8} sm>
-          <Paper>
+            <Paper>
 
-            <EventSearcherResults eventsData={this.getFilteredEvents()} searchQuery={this.state.query} />
-          </Paper>
+              <EventSearcherResults eventsData={this.getFilteredEvents()} searchQuery={this.state.query} />
+            </Paper>
 
 
           </Grid>
