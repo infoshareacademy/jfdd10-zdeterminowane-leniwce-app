@@ -11,10 +11,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 ReactDOM.render(
   <DataProvider>
-    <CssBaseline>
+    <CssBaseline />
 
       <App />
-    </CssBaseline>
   </DataProvider>,
   document.getElementById('root')
 );

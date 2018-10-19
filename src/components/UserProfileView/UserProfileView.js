@@ -14,7 +14,7 @@ class UserProfileView extends Component {
           const user = getUser(userId)
           const userEventsIds = user && user.events
 
-          if (user === undefined) {
+          if (user === undefined || events === undefined) {
             return (
               <div>
                 Loading...
@@ -33,6 +33,7 @@ class UserProfileView extends Component {
                   </Paper>
 
                   {user &&
+                    events &&
                     user.events &&
                     userEventsIds &&
                     <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId))} />

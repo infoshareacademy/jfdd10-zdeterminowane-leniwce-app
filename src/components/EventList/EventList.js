@@ -34,14 +34,14 @@ class EventList extends Component {
 
 
       <List>
-        { 
+        { this.props.eventsData &&
           this.props.eventsData.map(
             event => (
               
                 <EventListItem key={event.id} eventIcon={event.icon} id={event.id} eventTitle={event.title} eventDescription={event.description} />
               
             )
-          ) || 'wait'
+          ) 
         }
       </List>
 

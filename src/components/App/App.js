@@ -45,20 +45,17 @@ class App extends Component {
           <div className={this.styles.root}>
             <AppBar className='appBar' position='static'>
               <Toolbar>
-                <IconButton className={this.styles.menuButton} color="inherit" aria-label="Menu" aria-owns={anchorEl ? 'simple-menu' : null}
+                <IconButton color="inherit" aria-label="Menu" aria-owns={anchorEl ? 'simple-menu' : null}
                   aria-haspopup="true"
                   onClick={this.handleClick}>
                   <MenuIcon>
                   </MenuIcon>
                 </IconButton>
 
-                <Typography variant="h6" color="inherit" className={this.styles.grow}>
+                <Typography variant="title" color="inherit" >
                   Lazyness Radar
                 </Typography>
-                <Typography variant="h6" color="inherit" noWrap>
-                </Typography>
-                <Typography variant="h6" color="inherit" noWrap>
-                </Typography>
+                
               </Toolbar>
             </AppBar>
 

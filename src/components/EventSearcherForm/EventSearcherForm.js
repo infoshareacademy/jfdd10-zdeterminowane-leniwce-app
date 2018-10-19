@@ -28,18 +28,13 @@ class EventSearcherForm extends Component {
         <Grid container justify='center'>
           <Grid item lg={8} md={10} sm={12} xs={12}>
             <form onSubmit={this.preventSubmit}>
-              <TextField fullWidth='true' label='Search field' type='search' margin='normal' variant='filled' value={this.state.query} onChange={this.handleQueryChange} />
+              <TextField fullWidth={true} label='Search field' type='search' margin='normal' variant='filled' value={this.state.query} onChange={this.handleQueryChange} />
               {/* <Button variant="contained" size='large'>
             Search
             </Button> */}
-
             </form>
-
           </Grid>
-
         </Grid>
-
-
       </>
     )
   }
