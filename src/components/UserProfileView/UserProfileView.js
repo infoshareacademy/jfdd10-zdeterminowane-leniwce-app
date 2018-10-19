@@ -26,9 +26,7 @@ class UserProfileView extends Component {
             <Grid container justify='center'>
               <Grid item sm md={10} lg={8}>
                 <Paper>
-
                   <Paper>
-
                     <UserPersonalData user={user} />
                   </Paper>
 
@@ -41,10 +39,7 @@ class UserProfileView extends Component {
                 </Paper>
               </Grid>
             </Grid>
-
-
           )
-
         }}
       </DataContextConsumer>
     );
