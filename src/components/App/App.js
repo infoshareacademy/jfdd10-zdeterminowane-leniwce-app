@@ -37,9 +37,7 @@ class App extends Component {
                 <p>
                   <NavLink to="/user">User Profile</NavLink>
                 </p>
-                <p>
-                  <NavLink to="/events">Event View (for testing)</NavLink>
-                </p>
+                
 
               </div>
 
@@ -49,7 +47,7 @@ class App extends Component {
                 {/* <Route path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} /> */}
 
                 {/* <Route path="/event" component={EventView} /> */}
-                <Route exact path="/events" component={() => <h1> When EventView is ready, replace this in App</h1>} />
+                <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
 
               
                 <Route path="/events/:eventId" component={EventView} />

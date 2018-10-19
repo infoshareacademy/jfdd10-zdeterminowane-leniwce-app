@@ -1,11 +1,20 @@
-.EventParticipantListItem-description{
+.EventDescription-description{
   display: flex;
-  border: black solid 1px;
+  
   padding: 10px 10px
 }
-.EventParticipantListItem-description--text{
-  margin-left: 30px;
+.EventDescription-description--buttonarea{
+  display: flex;
+  justify-content: flex-end;
 }
-.EventParticipantListItem-image{
-  border-radius: 50%;
+.EventDescription-description--button{
+  height:50px;
+  width: 50px;
+  border-radius: 15px;
+  font-size: 16px;
+}
+.EventDescription-description--text{
+
+  padding: 10px;
+
 }
