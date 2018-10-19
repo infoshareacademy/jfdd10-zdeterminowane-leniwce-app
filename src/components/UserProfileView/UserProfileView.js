@@ -25,17 +25,19 @@ class UserProfileView extends Component {
           return (
             <Grid container justify='center'>
               <Grid item sm md={10} lg={8}>
-              <Paper>
+                <Paper>
 
+                  <Paper>
 
-                  <UserPersonalData user={user} />
+                    <UserPersonalData user={user} />
+                  </Paper>
 
                   {user &&
                     user.events &&
                     userEventsIds &&
                     <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId))} />
                   }
-              </Paper>
+                </Paper>
               </Grid>
             </Grid>
 

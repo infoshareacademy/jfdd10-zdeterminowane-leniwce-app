@@ -31,7 +31,12 @@ class EventListItem extends Component {
   render() {
     return (
       <>
-        <ListItem>
+        <ListItem
+        button
+        divider
+        component={Link} 
+        to={`/events/${this.props.id}`}
+        >
           <ListItemAvatar>
             <Avatar src={this.props.eventIcon} />
           </ListItemAvatar>
@@ -40,12 +45,7 @@ class EventListItem extends Component {
             primary={this.props.eventTitle}
             secondary={this.props.eventDescription}
           />
-          <ListItemSecondaryAction>
-            <Button>
-              <Link to={`/events/${this.props.id}`}></Link>
-            </Button>
-
-          </ListItemSecondaryAction>
+          
         </ListItem>
       </>
     )
