@@ -4,14 +4,10 @@ import EventList from '../EventList/EventList'
 
 class UserEvents extends Component {
 
-
-
-    // todo: trzeba zaimplementować dane!
-
   render() {
     return (
       <div>
-        Eventy, na które się zapisałeś:
+        Events that you singed up:
         <EventList eventsData={this.props.events}></EventList>
       </div>
       
