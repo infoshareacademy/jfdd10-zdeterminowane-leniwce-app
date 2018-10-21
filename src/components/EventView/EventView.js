@@ -9,24 +9,37 @@ class EventView extends Component {
   render() {
     return (
       <DataContextConsumer>
-        {({ getEvent }) => {
+        {({ getEvent, users }) => {
           const eventId = parseInt(this.props.match.params.eventId);
           const event = getEvent(eventId);
+          const eventParticipantsIds = event && event.attendingUsers
 
-          if (event === undefined) {
-            return <div>Loading...</div>;
-          }
+
           return (
             <div>
               <EventDescription
-                description={event.fullDescription}
-                title={event.title}
-                photoUrl={event.icon}
+                event={event}
               />
-              <EventParticipantList />
+
+              <div>
+                {
+                  event &&
+                  event.attendingUsers &&
+                  eventParticipantsIds &&
+                  <EventParticipantList
+                    users={eventParticipantsIds.map(
+                      eventParticipantId => users.find(
+                        user => user.id === eventParticipantId
+                      )
+                    )
+                  } />
+                }
+              </div>
+
+
+
               <EventParticipantMap />
-              <h1>{event.title}</h1>
-              <p>{event.description}</p>
+
             </div>
           );
         }}
