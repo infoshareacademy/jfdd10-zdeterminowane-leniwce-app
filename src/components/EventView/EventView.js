@@ -40,7 +40,7 @@ class EventView extends Component {
                 <div>
                   {
                     event &&
-                    <EventParticipantMap locX={event.locationX} locY={event.locationY}/>
+                    <EventParticipantMap eventTitle={event.title} locX={event.locationX} locY={event.locationY}/>
 
                   }
                 </div>
