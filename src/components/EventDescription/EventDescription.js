@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./EventDescription.css";
+import { Typography, Grid, Paper } from "@material-ui/core";
 
 class EventDescription extends Component {
   render() {
@@ -8,20 +9,35 @@ class EventDescription extends Component {
       return <div>Loading...</div>;
     }
     return (
-      <div>
-        
+      <Grid container justify='center'>
 
-        <div className="EventDescription-description">
-        {this.props.event.title}
-          <img className="EventDescription-image" src={this.props.event.icon} alt=""
-          />
-          <div className="EventDescription-description--text">
+
+
+        <Grid item lg={12} md={12} sm={12} xs={12} >
+          <Typography variant='h3' paragraph align='center'>
+            {this.props.event.title}
+
+          </Typography>
+
+        </Grid>
+        <Grid item lg={4} md={4} sm={12} xs={12} >
+          <Typography paragraph align='center'>
+            <img className="EventDescription-image" src={this.props.event.icon} alt=""
+            />
+          </Typography>
+
+
+        </Grid>
+
+        <Grid item lg={8} md={8} sm={12}>
+          <Typography variant='h5' paragraph align='center'>
+
             {this.props.event.fullDescription}
-          </div>
-        </div>
-        <div className="EventDescription-description--buttonarea">
-        </div>
-      </div>
+          </Typography>
+        </Grid>
+
+
+      </Grid>
     );
   }
 }

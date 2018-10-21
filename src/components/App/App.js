@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Link } from "react-router-dom";
 import HomeView from '../HomeView/HomeView';
 import UserProfileView from '../UserProfileView/UserProfileView'
 import EventView from '../EventView/EventView';
@@ -71,8 +71,11 @@ class App extends Component {
               <MenuItem onClick={this.handleClose}>
                 <NavLink to="/user/1">User Profile</NavLink>
               </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
+              </MenuItem>
             </Menu>
-
+            
 
             <main className='content'>
               <Route exact path="/" component={HomeView} />

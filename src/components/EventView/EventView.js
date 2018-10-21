@@ -4,6 +4,7 @@ import EventParticipantMap from "../EventParticipantMap/EventParticipantMap";
 import EventParticipantList from "../EventParticipantList/EventParticipantList";
 
 import { DataContextConsumer } from "../../contexts/DataContext";
+import { Paper, Grid } from "@material-ui/core";
 
 class EventView extends Component {
   render() {
@@ -17,33 +18,46 @@ class EventView extends Component {
 
           return (
             <div>
-              <EventDescription
-                event={event}
-              />
+              <Grid container justify='center' >
+                <Grid item lg={10} md={10} sm>
+                  <Paper>
+                    <Paper>
+                      <EventDescription
+                        event={event}
+                      />
+                    </Paper>
+                    <Paper>
+                      {
+                        event &&
+                        event.attendingUsers &&
+                        eventParticipantsIds &&
+                        <EventParticipantList
+                          users={eventParticipantsIds.map(
+                            eventParticipantId => users.find(
+                              user => user.id === eventParticipantId
+                            )
+                          ).filter(Boolean)
+                          } />
+                      }
+                    </Paper>
+                    <Paper>
+                      {
+                        event &&
+                        <EventParticipantMap eventTitle={event.title} locX={event.locationX} locY={event.locationY} />
 
-              <div>
-                {
-                  event &&
-                  event.attendingUsers &&
-                  eventParticipantsIds &&
-                  <EventParticipantList
-                    users={eventParticipantsIds.map(
-                      eventParticipantId => users.find(
-                        user => user.id === eventParticipantId
-                      )
-                    ).filter(Boolean)
-                  } />
-                }
-              </div>
+                      }
+                    </Paper>
 
 
-                <div>
-                  {
-                    event &&
-                    <EventParticipantMap eventTitle={event.title} locX={event.locationX} locY={event.locationY}/>
 
-                  }
-                </div>
+                  </Paper>
+
+
+
+                </Grid>
+              </Grid>
+
+
 
             </div>
           );

@@ -37,8 +37,8 @@ class EventListItem extends Component {
         component={Link} 
         to={`/events/${this.props.id}`}
         >
-          <ListItemAvatar>
-            <Avatar src={this.props.eventIcon}  />
+          <ListItemAvatar >
+            <Avatar src={this.props.eventIcon} />
           </ListItemAvatar>
 
           <ListItemText

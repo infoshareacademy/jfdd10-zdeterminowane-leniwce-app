@@ -9,7 +9,6 @@ class EventParticipantList extends Component {
     }
     return (
       <div className='user-list-container'>
-        {console.log(this.props.users)}
         Users attending this event:
         {
 
