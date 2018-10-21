@@ -27,7 +27,7 @@ class EventView extends Component {
                   event.attendingUsers &&
                   eventParticipantsIds &&
                   <EventParticipantList
-                    users={eventParticipantsIds.map(
+                    usersData={eventParticipantsIds.map(
                       eventParticipantId => users.find(
                         user => user.id === eventParticipantId
                       )
@@ -38,7 +38,7 @@ class EventView extends Component {
 
 
 
-              <EventParticipantMap />
+              {/* <EventParticipantMap locX={event.locationX} locY={event.locationY}/> */}
 
             </div>
           );

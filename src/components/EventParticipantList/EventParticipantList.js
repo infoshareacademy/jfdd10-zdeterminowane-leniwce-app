@@ -5,10 +5,13 @@ class EventParticipantList extends Component {
   render() {
     return (
       <div className='user-list-container'>
+
         {
-          // this.props.users.map(
+                console.log(this.props.usersData)
+
+          // this.props.usersData.map(
           //   user => (
-          //     <div className='event-list-item-wrapper' >
+          //     <div className='event-list-item-wrapper' key={user.id}>
                 
           //         <EventParticipantListItem
           //         userAvatar={user.avatar}
