@@ -39,7 +39,7 @@ class UserPersonalData extends Component {
           </div>
         </div>
         <div className="UserPersonalData-description">
-          <Typography variant='display1'>
+          <Typography align='center' variant='display1'>
             About me:
           </Typography>
 
