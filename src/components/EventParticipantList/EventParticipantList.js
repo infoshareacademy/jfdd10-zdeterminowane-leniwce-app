@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import EventParticipantListItem from '../EventParticipantListItem/EventParticipantListItem'
+import { Grid, Typography } from "@material-ui/core";
 
 class EventParticipantList extends Component {
   render() {
@@ -8,18 +9,24 @@ class EventParticipantList extends Component {
       return <div>Loading...</div>;
     }
     return (
-      <div className='user-list-container'>
+      <Grid container item lg={12} md={12} sm={12} xs={12} >
+        <Grid item lg={12} md={12} sm={12} xs={12}>
+        <Typography  color='secondary' variant='h5' paragraph align='center'>
+
         Users attending this event:
+        </Typography>
+        </Grid>
         {
 
           this.props.users &&
           this.props.users.length > 0 ?
-          <div>
+          <Grid item container lg={12} md={12} sm={12} xs={12}>
             {this.props.users.map(
               user => (
-                <div key={user.id}>
+         
 
                   <EventParticipantListItem
+                    key={user.id}
                     userAvatar={user.avatar}
                     id={user.id}
                     userName={user.first_name}
@@ -27,14 +34,14 @@ class EventParticipantList extends Component {
                   />
 
 
-                </div>
+     
               )
             )}
 
-          </div> : <p>None </p>
+          </Grid> : <p>None </p>
 
         }
-      </div>
+      </Grid>
 
     );
   }

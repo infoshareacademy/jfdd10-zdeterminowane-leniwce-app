@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import "./EventParticipantListItem.css";
+import { Grid, Typography, Paper } from "@material-ui/core";
 
 class EventParticipantListItem extends Component {
   render() {
     return (
-      <div>
-        
-        <img src={this.props.userAvatar} alt='user avatar'></img>
-        <p>{this.props.userName}</p>
+      <Grid item>
+        <Paper>
+          <Typography paragraph align='center'>
 
-        <p>{this.props.userLastName}</p>
+            <img src={this.props.userAvatar} alt='user avatar'></img>
+            <Typography color='primary' paragraph>
+              <p>{this.props.userName}</p>
 
-      </div>
+              <p>{this.props.userLastName}</p>
+            </Typography>
+          </Typography>
+
+        </Paper>
+
+
+      </Grid>
 
     );
   }
