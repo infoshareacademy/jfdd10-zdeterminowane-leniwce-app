@@ -1,6 +1,6 @@
 ```js
 <EventDescription
-  content={`
+  description={`
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             fringilla elementum justo, scelerisque feugiat ligula tristique
             convallis. Maecenas lectus nulla, venenatis vel sagittis vitae,
