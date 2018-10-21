@@ -27,7 +27,7 @@ class EventView extends Component {
                   event.attendingUsers &&
                   eventParticipantsIds &&
                   <EventParticipantList
-                    usersData={eventParticipantsIds.map(
+                    users={eventParticipantsIds.map(
                       eventParticipantId => users.find(
                         user => user.id === eventParticipantId
                       )
