@@ -55,7 +55,7 @@ class App extends Component {
                 <Typography variant="title" color="inherit" >
                   Lazyness Radar
                 </Typography>
-                
+
               </Toolbar>
             </AppBar>
 
@@ -75,7 +75,8 @@ class App extends Component {
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
               </MenuItem>
             </Menu>
-            
+
+            <Typography paragraph></Typography>
 
             <main className='content'>
               <Route exact path="/" component={HomeView} />
