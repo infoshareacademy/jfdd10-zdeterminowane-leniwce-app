@@ -5,14 +5,14 @@ class EventParticipantListItem extends Component {
   render() {
     return (
       <div>
-        this is a list item
-        {this.props.userName}
-          {/* <div className="EventParticipantListItem-description">
-          <img className="EventParticipantListItem-image" src={this.props.photoUrl} alt=""/>
-          <div className="EventParticipantListItem-description--text"> {this.props.content}</div> 
-        </div> */}
+        
+        <img src={this.props.userAvatar} alt='user avatar'></img>
+        <p>{this.props.userName}</p>
+
+        <p>{this.props.userLastName}</p>
+
       </div>
-      
+
     );
   }
 }

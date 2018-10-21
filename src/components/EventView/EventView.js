@@ -30,8 +30,8 @@ class EventView extends Component {
                     users={eventParticipantsIds.map(
                       eventParticipantId => users.find(
                         user => user.id === eventParticipantId
-                      ).filter(Boolean)
-                    )
+                      )
+                    ).filter(Boolean)
                   } />
                 }
               </div>

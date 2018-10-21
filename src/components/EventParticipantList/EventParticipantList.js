@@ -10,29 +10,30 @@ class EventParticipantList extends Component {
     return (
       <div className='user-list-container'>
         {console.log(this.props.users)}
-
-        test 1 2 3
+        Users attending this event:
         {
 
-          this.props.users ?
-            <div>
-              {this.props.users.map(
-                user => (
-                  <div key={user.id}>
+          this.props.users &&
+          this.props.users.length > 0 ?
+          <div>
+            {this.props.users.map(
+              user => (
+                <div key={user.id}>
 
-                    <EventParticipantListItem
-                      userAvatar={user.avatar}
-                      id={user.id}
-                      userName={user.first_name}
-                      userLastName={user.last_name} />
+                  <EventParticipantListItem
+                    userAvatar={user.avatar}
+                    id={user.id}
+                    userName={user.first_name}
+                    userLastName={user.last_name}
+                  />
 
 
-                  </div>
-                )
-              )}
+                </div>
+              )
+            )}
 
-            </div>
-            : <div> Loading ... </div>
+          </div> : <p>None </p>
+
         }
       </div>
 
