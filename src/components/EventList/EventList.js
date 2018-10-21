@@ -4,6 +4,7 @@ import EventListItem from '../EventListItem/EventListItem';
 import PropTypes from 'prop-types';
 
 import './EventList.css';
+import { List } from '@material-ui/core';
 
 
 
@@ -12,6 +13,7 @@ class EventList extends Component {
   static defaultProps = {
     eventsData: [
       {
+        id: 1,
         title: 'TITLE MISSING',
         description: 'DESCRIPTION MISSING'
       }
@@ -26,24 +28,22 @@ class EventList extends Component {
   }
 
   render() {
+
+    
     return (
-      <div className='event-list-container'>
-        {
+
+
+      <List>
+        { this.props.eventsData &&
           this.props.eventsData.map(
             event => (
-              <div className='event-list-item-wrapper' key={event.id}>
-                
-                  <EventListItem eventIcon={event.icon} id={event.id} eventTitle={event.title} eventDescription={event.description} />
-                
-                <div className='event-list-item-show'>
-                  
-
-                </div>
-              </div>
+              
+                <EventListItem key={event.id} eventIcon={event.icon} id={event.id} eventTitle={event.title} eventDescription={event.description} />
+              
             )
-          )
+          ) 
         }
-      </div>
+      </List>
 
     )
   }

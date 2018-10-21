@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { TextField, Grid, InputAdornment } from '@material-ui/core';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+
 
 
 class EventSearcherForm extends Component {
@@ -20,19 +23,29 @@ class EventSearcherForm extends Component {
     this.props.getSearchQuery(this.state.query);
   }
 
+  //change icon in search field!!!!
 
   render() {
     return (
       <>
-        <div>
-          <h1>Event Searcher</h1>
-          <form onSubmit={this.preventSubmit}>
-            <input value={this.state.query} onChange={this.handleQueryChange} />
-            <button>Search</button>
-
-          </form>
-        </div>
-
+        <Grid container justify='center'>
+          <Grid item lg={8} md={10} sm={12} xs={12}>
+            <form onSubmit={this.preventSubmit}>
+              <TextField 
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <AccountCircle />
+                  </InputAdornment>
+                ),
+              }}
+              fullWidth={true}
+              type='search' margin='normal' variant='filled'
+              value={this.state.query} onChange={this.handleQueryChange} />
+             
+            </form>
+          </Grid>
+        </Grid>
       </>
     )
   }

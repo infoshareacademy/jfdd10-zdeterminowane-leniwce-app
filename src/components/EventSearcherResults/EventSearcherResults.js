@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EventList from '../EventList/EventList'
+import { Grid, Paper } from '@material-ui/core';
 // import PropTypes from 'prop-types';
 
 
@@ -14,15 +15,16 @@ class EventSearcherResults extends Component {
     return (
       <>
         <div>
-          <h1>Event List</h1>
+          <Grid container justify='center'>
+            <Grid item >
+            <h1>Event List</h1>
 
-          {
-            this.props.searchQuery &&
-            <p>
-              Searched for: &nbsp;<span>{this.props.searchQuery}</span>
-            </p>
-          }
 
+
+            </Grid>
+          </Grid>
+
+         
           <EventList eventsData={this.props.eventsData} />
 
         </div>
