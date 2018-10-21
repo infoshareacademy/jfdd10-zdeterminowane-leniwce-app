@@ -38,7 +38,7 @@ class EventParticipantList extends Component {
               )
             )}
 
-          </Grid> : <p>None </p>
+          </Grid> : <Grid item>None </Grid>
 
         }
       </Grid>
