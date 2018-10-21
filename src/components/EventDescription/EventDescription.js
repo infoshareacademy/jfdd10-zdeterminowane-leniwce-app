@@ -9,8 +9,7 @@ class EventDescription extends Component {
     }
     return (
       <div>
-        {console.log(this.props.event)
-        }
+        
 
         <div className="EventDescription-description">
         {this.props.event.title}
