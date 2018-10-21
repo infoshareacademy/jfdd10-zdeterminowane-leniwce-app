@@ -11,9 +11,25 @@ class HomeView extends Component {
       <>
         <DataContextConsumer>
           {
-            ({ events, users }) => (
-              <EventSearcher eventsData={events} />
-            )
+            ({ events, users }) => {
+
+              if (events === null) {
+                return (
+                  <div>
+                    Loading...
+                  </div>
+                )
+              }
+
+              return (
+                <div>
+                  {
+                    events && <EventSearcher eventsData={events} />
+                  }
+                </div>
+              )
+            }
+
           }
         </DataContextConsumer>
 

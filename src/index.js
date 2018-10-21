@@ -4,10 +4,16 @@ import './index.css';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 import { DataProvider } from './contexts/DataContext';
+import 'typeface-roboto';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+
 
 ReactDOM.render(
   <DataProvider>
-    <App />
+    <CssBaseline />
+
+      <App />
   </DataProvider>,
   document.getElementById('root')
 );

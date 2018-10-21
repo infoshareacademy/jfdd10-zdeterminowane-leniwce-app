@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { TextField, Grid, InputAdornment } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search'
+
 
 
 class EventSearcherForm extends Component {
@@ -22,17 +25,32 @@ class EventSearcherForm extends Component {
 
 
   render() {
+    
     return (
       <>
-        <div>
-          <h1>Event Searcher</h1>
-          <form onSubmit={this.preventSubmit}>
-            <input value={this.state.query} onChange={this.handleQueryChange} />
-            <button>Search</button>
+        <Grid container justify='center'>
+          <Grid item lg={8} md={10} sm={12} xs={12}>
+            <form onSubmit={this.preventSubmit}>
+              <TextField
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchIcon />
+                    </InputAdornment>
+                  ),
+                }}
 
-          </form>
-        </div>
 
+                placeholder='Search for events'
+                fullWidth={true}
+                type='search'
+                margin='normal'
+                variant='filled'
+                value={this.state.query} onChange={this.handleQueryChange} />
+
+            </form>
+          </Grid>
+        </Grid>
       </>
     )
   }

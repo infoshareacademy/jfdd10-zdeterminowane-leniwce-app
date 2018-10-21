@@ -3,31 +3,43 @@ import "./UserProfileView.css";
 import UserPersonalData from "../UserPersonalData/UserPersonalData";
 import UserEvents from "../UserEvents/UserEvents";
 import { DataContextConsumer } from "../../contexts/DataContext";
+import { Grid, Paper } from "@material-ui/core";
 
 class UserProfileView extends Component {
   render() {
     return (
       <DataContextConsumer>
         {({ getUser, events }) => {
-             const userId = parseInt(this.props.match.params.userId)
-             const user = getUser(userId)
-             const userEventsIds = user && user.events
-          return(
-<div className="UserProfileView-container">
-            <div className="UserPersonalData-container">
-              <UserPersonalData user={user}/>
-            </div>
-            <div className="UserEvents-container">
-          {user &&
-             user.events &&
-              userEventsIds &&
-                <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId))} />
-          }
-            </div>
-          </div>
+          const userId = parseInt(this.props.match.params.userId)
+          const user = getUser(userId)
+          const userEventsIds = user && user.events
 
+          if (user === undefined || events === undefined) {
+            return (
+              <div>
+                Loading...
+              </div>
+            )
+          }
+
+          return (
+            <Grid container justify='center'>
+              <Grid item sm md={10} lg={8}>
+                <Paper>
+                  <Paper>
+                    <UserPersonalData user={user} />
+                  </Paper>
+
+                  {user &&
+                    events &&
+                    user.events &&
+                    userEventsIds &&
+                    <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId))} />
+                  }
+                </Paper>
+              </Grid>
+            </Grid>
           )
-          
         }}
       </DataContextConsumer>
     );

@@ -4,29 +4,61 @@ import EventParticipantMap from "../EventParticipantMap/EventParticipantMap";
 import EventParticipantList from "../EventParticipantList/EventParticipantList";
 
 import { DataContextConsumer } from "../../contexts/DataContext";
+import { Paper, Grid } from "@material-ui/core";
 
 class EventView extends Component {
   render() {
     return (
       <DataContextConsumer>
-        {({ getEvent }) => {
+        {({ getEvent, users }) => {
           const eventId = parseInt(this.props.match.params.eventId);
           const event = getEvent(eventId);
+          const eventParticipantsIds = event && event.attendingUsers
 
-          if (event === undefined) {
-            return <div>Loading...</div>;
-          }
+
           return (
             <div>
-              <EventDescription
-                description={event.fullDescription}
-                title={event.title}
-                photoUrl={event.icon}
-              />
-              <EventParticipantList />
-              <EventParticipantMap />
-              <h1>{event.title}</h1>
-              <p>{event.description}</p>
+              <Grid container justify='center' >
+                <Grid item lg={10} md={10} sm>
+                  <Paper>
+                    <Paper>
+                      <EventDescription
+                        event={event}
+                      />
+                    </Paper>
+                    <Paper>
+                      {
+                        event &&
+                        event.attendingUsers &&
+                        eventParticipantsIds &&
+                        <EventParticipantList
+                          users={eventParticipantsIds.map(
+                            eventParticipantId => users.find(
+                              user => user.id === eventParticipantId
+                            )
+                          ).filter(Boolean)
+                          } />
+                      }
+                    </Paper>
+                    <Paper>
+                      {
+                        event &&
+                        <EventParticipantMap eventTitle={event.title} locX={event.locationX} locY={event.locationY} />
+
+                      }
+                    </Paper>
+
+
+
+                  </Paper>
+
+
+
+                </Grid>
+              </Grid>
+
+
+
             </div>
           );
         }}

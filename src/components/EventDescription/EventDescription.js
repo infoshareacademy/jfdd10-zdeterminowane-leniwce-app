@@ -1,21 +1,43 @@
 import React, { Component } from "react";
 import "./EventDescription.css";
+import { Typography, Grid } from "@material-ui/core";
 
 class EventDescription extends Component {
   render() {
+
+    if (this.props.event === undefined) {
+      return <div>Loading...</div>;
+    }
     return (
-      <div>
-        <div className="EventDescription-description">
-        <img className="EventDescription-image" src={this.props.photoUrl} alt=""
-        /> 
-          <div className="EventDescription-description--text">
-            {this.props.description}
-          </div>
-        </div>
-        <div className="EventDescription-description--buttonarea">
-          <button className="EventDescription-description--button">Join</button>
-        </div>
-      </div>
+      <Grid container justify='center'>
+
+
+
+        <Grid item lg={12} md={12} sm={12} xs={12} >
+          <Typography variant='h3' paragraph align='center'>
+            {this.props.event.title}
+
+          </Typography>
+
+        </Grid>
+        <Grid item lg={4} md={4} sm={12} xs={12} >
+          <Typography paragraph align='center'>
+            <img className="EventDescription-image" src={this.props.event.icon} alt=""
+            />
+          </Typography>
+
+
+        </Grid>
+
+        <Grid item lg={8} md={8} sm={12}>
+          <Typography variant='h5' paragraph align='center'>
+
+            {this.props.event.fullDescription}
+          </Typography>
+        </Grid>
+
+
+      </Grid>
     );
   }
 }

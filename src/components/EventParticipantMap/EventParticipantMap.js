@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import "./EventParticipantMap.css";
 
-const position = [54.3897726, 18.591526];
 class EventParticipantMap extends Component {
+
+  
   render() {
+    const position = [this.props.locY, this.props.locX];
+
     return (
       <div>
         <Map center={position} zoom={13} style={{ height: 300 }}>
@@ -14,9 +17,7 @@ class EventParticipantMap extends Component {
           />
           <Marker position={position}>
             <Popup>
-              A pretty CSS3 popup.
-              <br />
-              Easily customizable.
+              {this.props.eventTitle}
             </Popup>
           </Marker>
         </Map>
