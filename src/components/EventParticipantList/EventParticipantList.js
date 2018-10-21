@@ -20,7 +20,7 @@ class EventParticipantList extends Component {
 
           this.props.users &&
           this.props.users.length > 0 ?
-          <Grid item container lg={12} md={12} sm={12} xs={12}>
+          <Grid item container lg={12} md={12} sm={12} xs={12} justify='center'>
             {this.props.users.map(
               user => (
          
