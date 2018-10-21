@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./EventDescription.css";
-import { Typography, Grid, Paper } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 
 class EventDescription extends Component {
   render() {

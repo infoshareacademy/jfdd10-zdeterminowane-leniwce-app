@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EventList from '../EventList/EventList'
-import { Grid, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 // import PropTypes from 'prop-types';
 
 

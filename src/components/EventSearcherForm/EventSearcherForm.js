@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TextField, Grid, InputAdornment } from '@material-ui/core';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import SearchIcon from '@material-ui/icons/Search'
 
 
@@ -26,11 +25,7 @@ class EventSearcherForm extends Component {
 
 
   render() {
-    const styles = {
-      textField: {
-        fontSize: 150
-      }
-    }
+    
     return (
       <>
         <Grid container justify='center'>
