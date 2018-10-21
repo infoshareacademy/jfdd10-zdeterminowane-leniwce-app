@@ -3,18 +3,24 @@ import "./EventDescription.css";
 
 class EventDescription extends Component {
   render() {
+
+    if (this.props.event === undefined) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
+        {console.log(this.props.event)
+        }
 
         <div className="EventDescription-description">
-          <img className="EventDescription-image" alt=""
+        {this.props.event.title}
+          <img className="EventDescription-image" src={this.props.event.icon} alt=""
           />
           <div className="EventDescription-description--text">
             {this.props.event.fullDescription}
           </div>
         </div>
         <div className="EventDescription-description--buttonarea">
-          <button className="EventDescription-description--button">Join</button>
         </div>
       </div>
     );
