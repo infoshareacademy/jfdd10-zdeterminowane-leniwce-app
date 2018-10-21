@@ -6,30 +6,34 @@ class EventParticipantList extends Component {
 
     if (this.props.users === undefined) {
       return <div>Loading...</div>;
-    } 
+    }
     return (
       <div className='user-list-container'>
         {console.log(this.props.users)}
 
         test 1 2 3
-        {/* {
+        {
 
           this.props.users ?
-          this.props.users.map(
-            user => (
-              <div key={user.id}>
+            <div>
+              {this.props.users.map(
+                user => (
+                  <div key={user.id}>
 
-                <EventParticipantListItem
-                  userAvatar={user.avatar}
-                  id={user.id}
-                  userName={user.first_name}
-                  userLastName={user.last_name} />
+                    <EventParticipantListItem
+                      userAvatar={user.avatar}
+                      id={user.id}
+                      userName={user.first_name}
+                      userLastName={user.last_name} />
 
 
-              </div>
-            )
-          ) : null
-        } */}
+                  </div>
+                )
+              )}
+
+            </div>
+            : <div> Loading ... </div>
+        }
       </div>
 
     );
