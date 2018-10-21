@@ -6,6 +6,7 @@ class EventParticipantListItem extends Component {
     return (
       <div>
         this is a list item
+        {this.props.userName}
           {/* <div className="EventParticipantListItem-description">
           <img className="EventParticipantListItem-image" src={this.props.photoUrl} alt=""/>
           <div className="EventParticipantListItem-description--text"> {this.props.content}</div> 
