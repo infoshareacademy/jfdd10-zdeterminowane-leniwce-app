@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import firebase from 'firebase'
+import firebasecfg from "../firebasecfg";
 
 const DataContext = React.createContext();
 
+firebase.initializeApp(firebasecfg);
 
 // export const DataProvider = DataContext.Provider
 export const DataContextConsumer = DataContext.Consumer; 
@@ -15,13 +18,22 @@ export class DataProvider extends Component {
 
   };
 
+  eventsRef = firebase.database().ref().child('events');
+
+  listenEvents = () => {
+    this.eventsRef.on('value', snapshot => {
+      this.setState({
+        events: Object.entries(snapshot.val() || {}).map(([id, value]) => ({
+          id,
+          ...value
+        })
+        )
+      })
+    })
+  }
 
   componentDidMount() {
-    fetch('/data-storage/events.json').then(
-      response => response.json()
-    ).then(
-      events => this.setState({ events: events })
-    );
+    this.listenEvents();
     fetch('/data-storage/users.json').then(
       response => response.json()
     ).then(
