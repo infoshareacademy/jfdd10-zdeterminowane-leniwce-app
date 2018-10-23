@@ -10,7 +10,7 @@ class UserProfileView extends Component {
     return (
       <DataContextConsumer>
         {({ getUser, events }) => {
-          const userId = parseInt(this.props.match.params.userId)
+          const userId = this.props.match.params.userId
           const user = getUser(userId)
           const userEventsIds = user && user.events
 

@@ -69,7 +69,7 @@ class App extends Component {
                 <NavLink exact to='/'>Home Page</NavLink>
               </MenuItem>
               <MenuItem onClick={this.handleClose}>
-                <NavLink to="/user/1">User Profile</NavLink>
+                <NavLink to="/user/-LPXNMbDwaulZ7fvhpue">User Profile</NavLink>
               </MenuItem>
               <MenuItem onClick={this.handleClose}>
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>

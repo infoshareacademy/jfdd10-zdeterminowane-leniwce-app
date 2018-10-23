@@ -19,6 +19,8 @@ export class DataProvider extends Component {
   };
 
   eventsRef = firebase.database().ref().child('events');
+  usersRef = firebase.database().ref().child('users');
+
 
   listenEvents = () => {
     this.eventsRef.on('value', snapshot => {
@@ -32,13 +34,21 @@ export class DataProvider extends Component {
     })
   }
 
+  listenUsers = () => {
+    this.usersRef.on('value', snapshot => {
+      this.setState({
+        users: Object.entries(snapshot.val() || {}).map(([id, value]) => ({
+          id,
+          ...value
+        })
+        )
+      })
+    })
+  }
+
   componentDidMount() {
     this.listenEvents();
-    fetch('/data-storage/users.json').then(
-      response => response.json()
-    ).then(
-      users => this.setState({ users: users })
-    );
+    this.listenUsers();
   }
 
   render() {
