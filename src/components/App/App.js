@@ -6,6 +6,7 @@ import EventView from '../EventView/EventView';
 import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SignUpForm from '../SignUpForm/SignUpForm';
+import SignInForm from '../SignInForm/SignInForm';
 
 
 
@@ -78,6 +79,9 @@ class App extends Component {
               <MenuItem onClick={this.handleClose}>
                 <a href="/signUp">Sign up</a>
               </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                <a href="/signIn">Sign in</a>
+              </MenuItem>
             </Menu>
 
             <Typography paragraph></Typography>
@@ -96,6 +100,7 @@ class App extends Component {
               <Route path="/events/:eventId" component={EventView} />
 
               <Route path="/signUp" component={SignUpForm} />
+              <Route path="/signIn" component={SignInForm} />
             </main>
           </div>
         </Router>
