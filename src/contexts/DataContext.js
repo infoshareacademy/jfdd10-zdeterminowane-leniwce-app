@@ -7,19 +7,26 @@ const DataContext = React.createContext();
 firebase.initializeApp(firebasecfg);
 
 // export const DataProvider = DataContext.Provider
-export const DataContextConsumer = DataContext.Consumer; 
+export const DataContextConsumer = DataContext.Consumer;
 
 export class DataProvider extends Component {
   state = {
     events: [],
     users: [],
     getEvent: (eventId) => this.state.events.find(event => event.id === eventId),
-    getUser: (userId) => this.state.users.find(user => user.id === userId),
-
+    getUser: (userId) => this.state.getUsersWithEvents().find(user => user.id === userId),
+    getUsersWithEvents: () => this.state.users.map(
+      user => ({
+        ...user, events: this.state.events.filter(
+          event => (Object.entries(event.attendingUsers || {}).map(([id]) => id)).includes(user.id)
+        )
+      })
+    )
   };
 
   eventsRef = firebase.database().ref().child('events');
   usersRef = firebase.database().ref().child('users');
+
 
 
   listenEvents = () => {

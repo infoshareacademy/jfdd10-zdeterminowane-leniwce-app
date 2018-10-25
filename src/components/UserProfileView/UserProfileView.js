@@ -9,12 +9,14 @@ class UserProfileView extends Component {
   render() {
     return (
       <DataContextConsumer>
-        {({ getUser, events }) => {
+        {({ getUser }) => {
           const userId = this.props.match.params.userId
           const user = getUser(userId)
           const userEventsIds = user && user.events
+          console.log(user)
+         
 
-          if (user === undefined || events === undefined) {
+          if (user === undefined) {
             return (
               <div>
                 Loading...
@@ -31,10 +33,9 @@ class UserProfileView extends Component {
                   </Paper>
 
                   {user &&
-                    events &&
-                    user.events &&
+                    
                     userEventsIds &&
-                    <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId))} />
+                    <UserEvents events={user.events} />
                   }
                 </Paper>
               </Grid>
