@@ -13,8 +13,8 @@ class EventView extends Component {
         {({ getEvent, users }) => {
           const eventId = this.props.match.params.eventId;
           const event = getEvent(eventId);
-          const eventParticipantsIds = event && event.attendingUsers
-
+          const eventParticipantsIds = event && (Object.entries(event.attendingUsers).map(([id, other]) => id))
+console.log(users, eventParticipantsIds)
 
           return (
             <div>
