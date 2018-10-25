@@ -17,19 +17,20 @@ class SignUpForm extends Component {
     })
   }
 
-  // handleSubmit = event => {
-  //   event.preventDefault()
-  //   firebase.auth().createUserWithEmailAndPassword(
-  //     this.state.name,
-  //     this.state.surname,
-  //     this.state.email,
-  //     this.state.password
-  //   ).then(
-  //     () => this.setState({ error: null })
-  //   ).catch(
-  //     error => this.setState({ error })
-  //   )
-  // }
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(event);
+    // firebase.auth().createUserWithEmailAndPassword(
+    //   this.state.name,
+    //   this.state.surname,
+    //   this.state.email,
+    //   this.state.password
+    // ).then(
+    //   () =>  this.setState({ error: null })
+    // ).catch(
+    //   error => this.setState({ error })
+    // )
+  }
 
   render() {
     return (
