@@ -5,6 +5,7 @@ import UserProfileView from '../UserProfileView/UserProfileView'
 import EventView from '../EventView/EventView';
 import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import SignUpForm from '../SignUpForm/SignUpForm';
 
 
 
@@ -74,6 +75,9 @@ class App extends Component {
               <MenuItem onClick={this.handleClose}>
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
               </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                <a href="/signUp">Sign up</a>
+              </MenuItem>
             </Menu>
 
             <Typography paragraph></Typography>
@@ -89,6 +93,9 @@ class App extends Component {
               <Route path="/user/:userId" component={UserProfileView} />
 
               <Route path="/events/:eventId" component={EventView} />
+              <Route path="/events/:eventId" component={EventView} />
+
+              <Route path="/signUp" component={SignUpForm} />
             </main>
           </div>
         </Router>

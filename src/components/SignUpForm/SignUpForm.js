@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./SingUpForm.css";
+// import "./SingUpForm.css";
 
 class SignUpForm extends Component {
   state = {
@@ -15,7 +15,21 @@ class SignUpForm extends Component {
     this.setState({
       [event.target.name]: event.target.value
     })
-  )
+  }
+
+  // handleSubmit = event => {
+  //   event.preventDefault()
+  //   firebase.auth().createUserWithEmailAndPassword(
+  //     this.state.name,
+  //     this.state.surname,
+  //     this.state.email,
+  //     this.state.password
+  //   ).then(
+  //     () => this.setState({ error: null })
+  //   ).catch(
+  //     error => this.setState({ error })
+  //   )
+  // }
 
   render() {
     return (
