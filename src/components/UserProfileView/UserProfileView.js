@@ -35,7 +35,9 @@ class UserProfileView extends Component {
                   {user &&
                     
                     userEventsIds &&
+
                     <UserEvents events={user.events} />
+
                   }
                 </Paper>
               </Grid>
