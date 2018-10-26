@@ -15,8 +15,6 @@ class EventDescription extends Component {
     return (
       <Grid container justify='center'>
 
-
-
         <Grid item lg={12} md={12} sm={12} xs={12} >
           <Typography variant='h3' paragraph align='center'>
             {this.props.event.title}
@@ -41,7 +39,6 @@ class EventDescription extends Component {
             <Button variant='contained' color='primary' size='large'>Join this Event</Button>
           </Typography>
         </Grid>
-
 
       </Grid>
     );

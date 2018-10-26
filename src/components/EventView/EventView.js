@@ -4,7 +4,7 @@ import EventParticipantMap from "../EventParticipantMap/EventParticipantMap";
 import EventParticipantList from "../EventParticipantList/EventParticipantList";
 
 import { DataContextConsumer } from "../../contexts/DataContext";
-import { Paper, Grid } from "@material-ui/core";
+import { Paper, Grid, Typography } from "@material-ui/core";
 
 class EventView extends Component {
   render() {
@@ -26,6 +26,8 @@ class EventView extends Component {
                       />
 
                     </Paper>
+                    <Typography paragraph></Typography>
+
                     <Paper>
                       {
                         event &&
