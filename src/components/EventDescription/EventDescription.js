@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import "./EventDescription.css";
 import { Typography, Grid, Button } from "@material-ui/core";
+import { withRouter } from 'react-router-dom'
+import BackButton from "../BackButton/BackButton";
 
 class EventDescription extends Component {
+  
+  
   render() {
 
     if (this.props.event === undefined) {
@@ -31,7 +35,12 @@ class EventDescription extends Component {
             {this.props.event.fullDescription}
           </Typography>
         </Grid>
-        <Button variant='contained' color='primary' size='large'>Join this Event</Button>
+        <Grid item sm={10} md={10} lg={10} xs={10}>
+          <Typography variant='h5'  align='right'>
+            <BackButton />
+            <Button variant='contained' color='primary' size='large'>Join this Event</Button>
+          </Typography>
+        </Grid>
 
 
       </Grid>
@@ -39,4 +48,4 @@ class EventDescription extends Component {
   }
 }
 
-export default EventDescription;
+export default withRouter(EventDescription);

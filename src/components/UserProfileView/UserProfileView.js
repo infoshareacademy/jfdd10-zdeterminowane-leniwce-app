@@ -13,7 +13,6 @@ class UserProfileView extends Component {
           const userId = this.props.match.params.userId
           const user = getUser(userId)
           const userEventsIds = user && user.events
-          console.log(user)
          
 
           if (user === undefined) {
