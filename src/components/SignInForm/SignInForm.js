@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import firebase from 'firebase'
+import { Link } from "react-router-dom";
+
 
 class SignInForm extends Component {
   state = {
-    name: "",
-    surname: "",
+    
     email: "",
     password: "",
     error: null
@@ -17,15 +19,14 @@ class SignInForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(event);
-    // firebase.auth().createUserWithEmailAndPassword(
-    //   this.state.email,
-    //   this.state.password
-    // ).then(
-    //   () =>  this.setState({ error: null })
-    // ).catch(
-    //   error => this.setState({ error })
-    // )
+    firebase.auth().signInWithEmailAndPassword(
+      this.state.email,
+      this.state.password
+    ).then(
+      () => this.setState({ error: null })
+    ).catch(
+      error => this.setState({ error })
+    )
   }
 
   render() {
@@ -45,6 +46,13 @@ class SignInForm extends Component {
           onChange={this.handleChange}
         />
         <button>Sign in</button>
+
+        <button>
+
+        <Link to='/signUp'>Sign up</Link>
+        </button>
+
+
       </form>
     );
   }

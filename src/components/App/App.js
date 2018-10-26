@@ -58,6 +58,8 @@ class App extends Component {
                   Lazyness Radar
                 </Typography>
 
+                <SignInForm />
+
               </Toolbar>
             </AppBar>
 
@@ -76,12 +78,8 @@ class App extends Component {
               <MenuItem onClick={this.handleClose}>
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
               </MenuItem>
-              <MenuItem onClick={this.handleClose}>
-                <a href="/signUp">Sign up</a>
-              </MenuItem>
-              <MenuItem onClick={this.handleClose}>
-                <a href="/signIn">Sign in</a>
-              </MenuItem>
+              
+              
             </Menu>
 
             <Typography paragraph></Typography>
@@ -100,7 +98,7 @@ class App extends Component {
               <Route path="/events/:eventId" component={EventView} />
 
               <Route path="/signUp" component={SignUpForm} />
-              <Route path="/signIn" component={SignInForm} />
+              
             </main>
           </div>
         </Router>
