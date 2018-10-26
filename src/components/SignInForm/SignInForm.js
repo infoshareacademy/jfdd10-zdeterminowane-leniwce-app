@@ -19,8 +19,6 @@ class SignInForm extends Component {
     event.preventDefault();
     console.log(event);
     // firebase.auth().createUserWithEmailAndPassword(
-    //   this.state.name,
-    //   this.state.surname,
     //   this.state.email,
     //   this.state.password
     // ).then(
@@ -34,18 +32,6 @@ class SignInForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="SignUpForm">
         {this.state.error && <p>{this.state.error.message}</p>}
-        <input
-          placeholder="Enter name"
-          name="name"
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-        <input
-          placeholder="Enter surname"
-          name="surname"
-          value={this.state.surname}
-          onChange={this.handleChange}
-        />
         <input
           placeholder="Enter email"
           name="email"
