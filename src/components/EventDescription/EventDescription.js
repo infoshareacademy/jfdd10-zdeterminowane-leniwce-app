@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./EventDescription.css";
 import { Typography, Grid, Button } from "@material-ui/core";
-import { withRouter } from 'react-router-dom'
 import BackButton from "../BackButton/BackButton";
 
 class EventDescription extends Component {
@@ -45,4 +44,4 @@ class EventDescription extends Component {
   }
 }
 
-export default withRouter(EventDescription);
+export default EventDescription;
