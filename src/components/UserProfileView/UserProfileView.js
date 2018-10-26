@@ -34,7 +34,7 @@ class UserProfileView extends Component {
                     events &&
                     user.events &&
                     userEventsIds &&
-                    <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId))} />
+                    <UserEvents events={userEventsIds.map(userEventId => events.find(event => event.id === userEventId)).filter(Boolean)} />
                   }
                 </Paper>
               </Grid>
