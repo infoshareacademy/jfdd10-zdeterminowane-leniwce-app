@@ -6,15 +6,20 @@ import * as serviceWorker from './serviceWorker';
 import { DataProvider } from './contexts/DataContext';
 import 'typeface-roboto';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import AuthProvider from './contexts/AuthContext';
 
 
 
 ReactDOM.render(
-  <DataProvider>
-    <CssBaseline />
+  <AuthProvider>
+    <DataProvider>
+      <CssBaseline />
 
       <App />
-  </DataProvider>,
+    </DataProvider>
+  </AuthProvider>
+
+  ,
   document.getElementById('root')
 );
 
