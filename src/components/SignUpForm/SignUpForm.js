@@ -46,7 +46,6 @@ class SignUpForm extends Component {
 
 
 
-// use set
 
 render() {
   return (
