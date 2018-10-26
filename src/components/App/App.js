@@ -6,7 +6,7 @@ import EventView from '../EventView/EventView';
 import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SignUpForm from '../SignUpForm/SignUpForm';
-import SignInForm from '../SignInForm/SignInForm';
+import Auth from '../Auth/Auth';
 
 
 
@@ -57,8 +57,10 @@ class App extends Component {
                 <Typography variant="title" color="inherit" >
                   Lazyness Radar
                 </Typography>
-
-                <SignInForm />
+                
+                
+                  <Auth />
+                
 
               </Toolbar>
             </AppBar>
@@ -78,8 +80,8 @@ class App extends Component {
               <MenuItem onClick={this.handleClose}>
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
               </MenuItem>
-              
-              
+
+
             </Menu>
 
             <Typography paragraph></Typography>
@@ -98,7 +100,7 @@ class App extends Component {
               <Route path="/events/:eventId" component={EventView} />
 
               <Route path="/signUp" component={SignUpForm} />
-              
+
             </main>
           </div>
         </Router>
