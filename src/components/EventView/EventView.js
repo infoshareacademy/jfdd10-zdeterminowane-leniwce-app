@@ -24,6 +24,7 @@ class EventView extends Component {
                       <EventDescription
                         event={event}
                       />
+
                     </Paper>
                     <Paper>
                       {
@@ -46,18 +47,9 @@ class EventView extends Component {
 
                       }
                     </Paper>
-
-
-
                   </Paper>
-
-
-
                 </Grid>
               </Grid>
-
-
-
             </div>
           );
         }}

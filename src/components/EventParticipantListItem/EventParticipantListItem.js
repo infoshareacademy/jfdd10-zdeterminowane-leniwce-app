@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./EventParticipantListItem.css";
-import { Grid, Typography, Paper } from "@material-ui/core";
+import { Grid, Typography, Paper, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 
@@ -8,6 +8,7 @@ class EventParticipantListItem extends Component {
   render() {
     return (
       <Grid item>
+        <Button>
         <Paper
         component={Link}
         to={`/user/${this.props.id}`}
@@ -25,7 +26,7 @@ class EventParticipantListItem extends Component {
 
           </Typography>
         </Paper>
-
+        </Button>
 
       </Grid>
 
