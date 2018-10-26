@@ -1,0 +1,1 @@
+backup w przypadku zaorania firebase

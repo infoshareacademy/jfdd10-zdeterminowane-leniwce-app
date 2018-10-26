@@ -11,10 +11,9 @@ class EventView extends Component {
     return (
       <DataContextConsumer>
         {({ getEvent, users }) => {
-          const eventId = parseInt(this.props.match.params.eventId);
+          const eventId = this.props.match.params.eventId;
           const event = getEvent(eventId);
-          const eventParticipantsIds = event && event.attendingUsers
-
+          const eventParticipantsIds = event && (Object.entries(event.attendingUsers).map(([id]) => id))
 
           return (
             <div>

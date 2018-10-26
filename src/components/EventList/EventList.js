@@ -29,19 +29,20 @@ class EventList extends Component {
 
   render() {
 
-    
+
     return (
 
 
       <List>
-        { this.props.eventsData &&
+        {this.props.eventsData &&
+          this.props.eventsData.length > 0 &&
           this.props.eventsData.map(
             event => (
-              
-                <EventListItem key={event.id} eventIcon={event.icon} id={event.id} eventTitle={event.title} eventDescription={event.description} />
-              
+
+              <EventListItem key={event.id} eventIcon={event.icon} id={event.id} eventTitle={event.title} eventDescription={event.description} />
+
             )
-          ) 
+          )
         }
       </List>
 
