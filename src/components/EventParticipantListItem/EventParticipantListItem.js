@@ -12,6 +12,7 @@ class EventParticipantListItem extends Component {
         <Paper
         component={Link}
         to={`/user/${this.props.id}`}
+        style={{textDecoration: 'none'}}
         >
           <Typography  align='center'>
 
