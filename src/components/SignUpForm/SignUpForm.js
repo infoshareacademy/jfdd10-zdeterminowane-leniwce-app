@@ -38,6 +38,8 @@ class SignUpForm extends Component {
         this.setState({ error: null });
         makeNewUser(user.uid, this.state)
       }
+    ).then(
+      this.props.history.push('/')
     ).catch(
       error => this.setState({ error })
     )
