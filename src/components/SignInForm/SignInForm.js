@@ -30,7 +30,7 @@ class SignInForm extends Component {
       })
     }
     
-    firebase.auth().createUserWithEmailAndPassword(
+    firebase.auth().signInWithEmailAndPassword(
       this.state.email,
       this.state.password
     ).then (

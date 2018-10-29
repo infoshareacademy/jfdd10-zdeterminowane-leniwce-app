@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import firebase from 'firebase'
 
 // import "./SingUpForm.css";
 
@@ -19,7 +20,34 @@ class SignUpForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(event);
+    console.log(this.state);
+
+    if (this.state.email.length === 0) {
+      return this.setState ({
+        error: 'Please add your name'
+      })
+    }
+
+    if (this.state.surname.length === 0) {
+      return this.setState ({
+        error: 'Please add your surname'
+      })
+    }
+
+    if (this.state.email.length === 0) {
+      return this.setState ({
+        error: 'Please add your email'
+      })
+    }
+
+    if (this.state.password.length === 0) {
+      return this.setState({
+        error: 'Please add your password'
+      })
+    }
+
+    
+
     // firebase.auth().createUserWithEmailAndPassword(
     //   this.state.name,
     //   this.state.surname,
