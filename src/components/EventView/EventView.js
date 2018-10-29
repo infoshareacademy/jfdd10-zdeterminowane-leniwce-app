@@ -22,7 +22,7 @@ class EventView extends Component {
                   <Paper>
                     <Paper>
                       <EventDescription
-                        event={event}
+                        event={event} eventParticipantsIds={eventParticipantsIds}
                       />
 
                     </Paper>

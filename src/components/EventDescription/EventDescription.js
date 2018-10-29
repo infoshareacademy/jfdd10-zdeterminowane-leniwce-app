@@ -16,9 +16,30 @@ class EventDescription extends Component {
 
   render() {
     const { user } = this.props.authContext;
+    const eventParticipantsIds = this.props.event && this.props.event.attendingUsers && this.props.eventParticipantsIds
+
     if (this.props.event === undefined) {
       return <div>Loading...</div>;
     }
+
+    const checkAttendingUsers = () => {
+      if (this.props.event.attendingUsers) {
+        return (eventParticipantsIds
+          .find(eventParticipantId => user.uid === eventParticipantId) &&
+          (<Button variant='contained' size='large' disabled >Already signed up</Button>))
+      } else {
+        return (<Button
+          onClick={() => joinEvent(this.props.event.id, user.uid)}
+          variant='contained'
+          color='primary'
+          size='large'>Join this Event</Button>)
+      }
+
+    }
+
+
+
+
     return (
       <Grid container justify='center'>
 
@@ -27,7 +48,7 @@ class EventDescription extends Component {
             {this.props.event.title}
           </Typography>
         </Grid>
-        
+
         <Grid item lg={4} md={4} sm={12} xs={12} >
           <Typography paragraph align='center'>
             <img className="EventDescription-image" src={this.props.event.icon} alt=""
@@ -44,8 +65,18 @@ class EventDescription extends Component {
           <Typography variant='h5' align='right'>
             <BackButton />
             {
-              user &&
-              <Button onClick={() => joinEvent(this.props.event.id, user.uid)} variant='contained' color='primary' size='large'>Join this Event</Button>
+              user ?
+                (
+                  checkAttendingUsers()
+                )
+                :
+                (
+                  <Button
+                    variant='contained'
+                    color='primary'
+                    size='large'
+                    disabled>Log in to join</Button>
+                )
             }
           </Typography>
         </Grid>
