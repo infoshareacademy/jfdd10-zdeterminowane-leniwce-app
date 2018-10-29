@@ -29,6 +29,31 @@ class SignUpForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
+
+    if (this.state.name.length === 0) {
+      return this.setState ({
+        error: 'Please add your name'
+      })
+    }
+
+    if (this.state.surname.length === 0) {
+      return this.setState ({
+        error: 'Please add your surname'
+      })
+    }
+
+    if (this.state.email.length === 0) {
+      return this.setState ({
+        error: 'Please add your email'
+      })
+    }
+
+    if (this.state.password.length === 0) {
+      return this.setState({
+        error: 'Please add your password'
+      })
+    }
     firebase.auth().createUserWithEmailAndPassword(
 
       this.state.email,
@@ -41,7 +66,7 @@ class SignUpForm extends Component {
     ).then(
       () => this.props.history.push('/')
     ).catch(
-      error => this.setState({ error })
+      error => this.setState({ error: error.message })
     )
   }
 
@@ -51,6 +76,7 @@ class SignUpForm extends Component {
 
   render() {
     return (
+      <>
       <form onSubmit={this.handleSubmit} className="SignUpForm">
         {this.state.error && <p>{this.state.error.message}</p>}
         <input
@@ -74,11 +100,16 @@ class SignUpForm extends Component {
         <input
           placeholder="Enter password"
           name="password"
+          type="password"
           value={this.state.password}
           onChange={this.handleChange}
         />
         <button>Sign up</button>
       </form>
+      {
+        this.state.error && <div style={{color: 'red'}}>{this.state.error}</div>
+      }
+      </>
     );
   }
 }
