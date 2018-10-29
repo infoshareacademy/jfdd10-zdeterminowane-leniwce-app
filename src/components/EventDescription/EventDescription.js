@@ -12,8 +12,8 @@ const joinEvent = (eventId, userId) => {
   })
 }
 class EventDescription extends Component {
-  
-  
+
+
   render() {
     const { user } = this.props.authContext;
     if (this.props.event === undefined) {
@@ -27,11 +27,7 @@ class EventDescription extends Component {
             {this.props.event.title}
           </Typography>
         </Grid>
-  { 
-    console.log(this.props.event.id) }
-    {user &&
-     console.log(user.uid)
-    }
+        
         <Grid item lg={4} md={4} sm={12} xs={12} >
           <Typography paragraph align='center'>
             <img className="EventDescription-image" src={this.props.event.icon} alt=""
@@ -45,9 +41,12 @@ class EventDescription extends Component {
           </Typography>
         </Grid>
         <Grid item sm={10} md={10} lg={10} xs={10}>
-          <Typography variant='h5'  align='right'>
+          <Typography variant='h5' align='right'>
             <BackButton />
-            <Button onClick={() => joinEvent(this.props.event.id, user.uid)} variant='contained' color='primary' size='large'>Join this Event</Button>
+            {
+              user &&
+              <Button onClick={() => joinEvent(this.props.event.id, user.uid)} variant='contained' color='primary' size='large'>Join this Event</Button>
+            }
           </Typography>
         </Grid>
 
