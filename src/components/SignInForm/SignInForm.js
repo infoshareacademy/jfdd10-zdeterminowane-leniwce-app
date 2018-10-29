@@ -19,7 +19,6 @@ class SignInForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
 
     if (this.state.email.length === 0) {
       return this.setState ({
