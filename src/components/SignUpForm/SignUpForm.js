@@ -6,7 +6,7 @@ const makeNewUser = (userId, { name, surname, email }) => {
     first_name: name,
     last_name: surname,
     email: email,
-    avatar: '',
+    avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/20/20fd725c79d4d4839c9f36e791248eac315f3aad_full.jpg",
     description: ''
   })
 }

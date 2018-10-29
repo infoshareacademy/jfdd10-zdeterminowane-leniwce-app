@@ -7,6 +7,7 @@ import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@materi
 import MenuIcon from '@material-ui/icons/Menu';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import Auth from '../Auth/Auth';
+import { withAuthContext } from '../../contexts/AuthContext';
 
 
 
@@ -40,6 +41,8 @@ class App extends Component {
 
   render() {
     const { anchorEl } = this.state;
+    const { user } = this.props.authContext;
+    
 
     return (
       <>
@@ -57,10 +60,10 @@ class App extends Component {
                 <Typography variant="title" color="inherit" >
                   Lazyness Radar
                 </Typography>
-                
-                
-                  <Auth />
-                
+
+
+                <Auth />
+
 
               </Toolbar>
             </AppBar>
@@ -74,9 +77,11 @@ class App extends Component {
               <MenuItem onClick={this.handleClose}>
                 <NavLink exact to='/'>Home Page</NavLink>
               </MenuItem>
-              <MenuItem onClick={this.handleClose}>
-                <NavLink to="/user/-LPXNMbDwaulZ7fvhpue">User Profile</NavLink>
-              </MenuItem>
+              {user &&
+                <MenuItem onClick={this.handleClose}>
+                  <NavLink to={`/user/${user.uid}` || `/`}>User Profile</NavLink>
+                </MenuItem>
+              }
               <MenuItem onClick={this.handleClose}>
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
               </MenuItem>
@@ -109,4 +114,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthContext(App);
