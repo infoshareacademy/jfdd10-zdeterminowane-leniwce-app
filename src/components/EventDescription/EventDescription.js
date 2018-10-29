@@ -25,18 +25,30 @@ class EventDescription extends Component {
     const checkAttendingUsers = () => {
       if (this.props.event.attendingUsers) {
         return (eventParticipantsIds
-          .find(eventParticipantId => user.uid === eventParticipantId) &&
-          (<Button variant='contained' size='large' disabled >Already signed up</Button>))
+          .find(eventParticipantId => user.uid === eventParticipantId) ?
+          (
+            <Button variant='contained' size='large' disabled >Already signed up</Button>
+          )
+          :
+          (
+            <Button
+              onClick={() => joinEvent(this.props.event.id, user.uid)}
+              variant='contained'
+              color='primary'
+              size='large'>Join this Event</Button>
+          )
+        )
       } else {
-        return (<Button
-          onClick={() => joinEvent(this.props.event.id, user.uid)}
-          variant='contained'
-          color='primary'
-          size='large'>Join this Event</Button>)
+        return (
+          <Button
+            onClick={() => joinEvent(this.props.event.id, user.uid)}
+            variant='contained'
+            color='primary'
+            size='large'>Join this Event</Button>
+        )
       }
 
     }
-
 
 
 
