@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import firebase from 'firebase'
 
 // import "./SingUpForm.css";
@@ -22,7 +22,7 @@ class SignUpForm extends Component {
     event.preventDefault();
     console.log(this.state);
 
-    if (this.state.email.length === 0) {
+    if (this.state.name.length === 0) {
       return this.setState ({
         error: 'Please add your name'
       })
@@ -45,23 +45,19 @@ class SignUpForm extends Component {
         error: 'Please add your password'
       })
     }
-
-    
-
-    // firebase.auth().createUserWithEmailAndPassword(
-    //   this.state.name,
-    //   this.state.surname,
-    //   this.state.email,
-    //   this.state.password
-    // ).then(
-    //   () =>  this.setState({ error: null })
-    // ).catch(
-    //   error => this.setState({ error })
-    // )
+    firebase.auth().createUserWithEmailAndPassword(
+      this.state.email,
+      this.state.password
+    ).then(
+      () =>  this.setState({ error: null })
+    ).catch(
+      error => this.setState({ error: error.message })
+    )
   }
 
   render() {
     return (
+      <Fragment>
       <form onSubmit={this.handleSubmit} className="SignUpForm">
         {this.state.error && <p>{this.state.error.message}</p>}
         <input
@@ -85,11 +81,16 @@ class SignUpForm extends Component {
         <input
           placeholder="Enter password"
           name="password"
+          type="password"
           value={this.state.password}
           onChange={this.handleChange}
         />
         <button>Sign up</button>
       </form>
+      {
+        this.state.error && <div style={{color: 'red'}}>{this.state.error}</div>
+      }
+      </Fragment>
     );
   }
 }
