@@ -2,12 +2,20 @@ import React, { Component } from "react";
 import "./EventDescription.css";
 import { Typography, Grid, Button } from "@material-ui/core";
 import BackButton from "../BackButton/BackButton";
+import { withAuthContext } from "../../contexts/AuthContext";
+import firebase from 'firebase'
 
+
+const joinEvent = (eventId, userId) => {
+  firebase.database().ref(`events/${eventId}/attendingUsers`).update({
+    [userId]: true
+  })
+}
 class EventDescription extends Component {
   
   
   render() {
-
+    const { user } = this.props.authContext;
     if (this.props.event === undefined) {
       return <div>Loading...</div>;
     }
@@ -19,7 +27,11 @@ class EventDescription extends Component {
             {this.props.event.title}
           </Typography>
         </Grid>
-
+  { 
+    console.log(this.props.event.id) }
+    {user &&
+     console.log(user.uid)
+    }
         <Grid item lg={4} md={4} sm={12} xs={12} >
           <Typography paragraph align='center'>
             <img className="EventDescription-image" src={this.props.event.icon} alt=""
@@ -35,7 +47,7 @@ class EventDescription extends Component {
         <Grid item sm={10} md={10} lg={10} xs={10}>
           <Typography variant='h5'  align='right'>
             <BackButton />
-            <Button variant='contained' color='primary' size='large'>Join this Event</Button>
+            <Button onClick={() => joinEvent(this.props.event.id, user.uid)} variant='contained' color='primary' size='large'>Join this Event</Button>
           </Typography>
         </Grid>
 
@@ -44,4 +56,4 @@ class EventDescription extends Component {
   }
 }
 
-export default EventDescription;
+export default withAuthContext(EventDescription);

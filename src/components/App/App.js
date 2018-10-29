@@ -102,7 +102,6 @@ class App extends Component {
               <Route path="/user/:userId" component={UserProfileView} />
 
               <Route path="/events/:eventId" component={EventView} />
-              <Route path="/events/:eventId" component={EventView} />
 
               <Route path="/signUp" component={SignUpForm} />
 
