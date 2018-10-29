@@ -79,7 +79,7 @@ class App extends Component {
               </MenuItem>
               {user &&
                 <MenuItem onClick={this.handleClose}>
-                  <NavLink to={`/user/${user.uid}` || `/`}>User Profile</NavLink>
+                  <NavLink to={`/user/${user.uid}`}>User Profile</NavLink>
                 </MenuItem>
               }
               <MenuItem onClick={this.handleClose}>
