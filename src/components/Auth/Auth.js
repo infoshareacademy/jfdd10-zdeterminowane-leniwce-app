@@ -3,7 +3,8 @@ import { withAuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 
 
-import SignInForm from "../SignInForm/SignInForm";
+import AuthView from "../AuthView/AuthView";
+import { Button } from "@material-ui/core";
 
 
 class Auth extends Component {
@@ -11,17 +12,23 @@ class Auth extends Component {
     const { user, signOut } = this.props.authContext;
     return user ? (
       <>
-        <p>
-          {`Logged in as: ${user.email}`} <button onClick={() => signOut()}><Link to='/'>Sign out</Link></button>
-        </p>
+        <span>
+          {`Logged in as: ${user.email}  `}
+          
+        </span>
+        <Button onClick={() => signOut()} component={Link} to='/' variant='contained' size='medium'>
+            Sign out
+        </Button>
         {this.props.children}
       </>
     ) : (
-      <>
-        <SignInForm />
-      </>
-    );
+        <>
+          <AuthView />
+        </>
+      );
   }
 }
 
 export default withAuthContext(Auth);
+
+
