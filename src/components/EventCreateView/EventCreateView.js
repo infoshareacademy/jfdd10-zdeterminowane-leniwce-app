@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { withAuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { Grid, TextField, Button } from "@material-ui/core";
+import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+
 
 
 class EventCreateView extends Component {
@@ -54,13 +56,28 @@ class EventCreateView extends Component {
 
 
   render() {
+    const position = [this.state.locationY, this.state.locationX];
+
     return (
       <>
         <Grid container justify='center' >
           <form onSubmit={this.handleSubmit}>
             <Grid container item justify='center' spacing={8} >
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Map center={position} zoom={13} style={{ height: 350 }}>
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                  />
+                  <Marker position={position}>
+                    <Popup>
+                      {this.state.title}
+                    </Popup>
+                  </Marker>
+                </Map>
+              </Grid>
 
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <TextField
                   fullWidth={true}
                   color='secondary'
