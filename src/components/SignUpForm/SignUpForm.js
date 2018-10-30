@@ -79,7 +79,7 @@ class SignUpForm extends Component {
     return (
       <>
         <Grid container justify='center' >
-          <form onSubmit={this.handleSubmit} className="SignUpForm">
+          <form onSubmit={this.handleSubmit}>
             <Grid container item justify='center' spacing={8} >
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
 
