@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
 import { Link } from "react-router-dom";
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Grid } from '@material-ui/core';
 
 
 class SignInForm extends Component {
@@ -49,34 +49,56 @@ class SignInForm extends Component {
 
   render() {
     return (
-      <>
+      <Grid container justify='center' >
         <form onSubmit={this.handleSubmit}>
-          {this.state.error && <p>{this.state.error.message}</p>}
-          <TextField
-            color='secondary'
-            variant='outlined'
-            label='e-mail'
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <TextField
-            variant='outlined'
-            label="Password"
-            name="password"
-            type="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <Button onClick={() => this.handleSubmit} type='submit'>Sign in</Button>
+          <Grid container item justify='center' >
 
-         
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <TextField
+                fullWidth={true}
+                color='secondary'
+                variant='outlined'
+                label='e-mail'
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <TextField
+                fullWidth={true}
+                variant='outlined'
+                label="Password"
+                name="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Button
+                onClick={() => this.handleSubmit}
+                type='submit'
+                variant='contained'
+                size='large'
+                color='primary'
+              >
+                Sign in
+              </Button>
+            </Grid>
+
+          </Grid>
+
+
+
 
         </form>
         {
           this.state.error && <div style={{ color: 'red' }}>{this.state.error}</div>
         }
-      </>
+      </Grid>
     );
   }
 }

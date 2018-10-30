@@ -11,11 +11,21 @@ class AuthView extends Component {
 
     return (
       <>
-        <Button component={Link} to='/signIn' variant='contained' size='large'>
+        <Button
+          component={Link}
+          to='/signIn'
+          variant='contained'
+          size='large'
+        >
           Sign in
         </Button>
 
-        <Button component={Link} to='/signUp' variant='contained' size='large'>
+        <Button
+          component={Link}
+          to='/signUp'
+          variant='contained'
+          size='large'
+        >
           Sign up
         </Button>
 
