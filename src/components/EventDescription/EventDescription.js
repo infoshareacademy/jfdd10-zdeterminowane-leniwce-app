@@ -27,7 +27,7 @@ class EventDescription extends Component {
         return (eventParticipantsIds
           .find(eventParticipantId => user.uid === eventParticipantId) ?
           (
-            <Button variant='contained' size='large' disabled >Already signed up</Button>
+            <Button variant='contained' size='large' disabled >Already joined</Button>
           )
           :
           (

@@ -79,7 +79,6 @@ class SignInForm extends Component {
 
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Button
-                  onClick={() => this.handleSubmit}
                   type='submit'
                   variant='contained'
                   size='large'

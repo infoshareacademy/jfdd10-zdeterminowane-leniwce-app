@@ -134,8 +134,15 @@ class SignUpForm extends Component {
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-
-                <button>Sign up</button>
+                <Button
+                  type='submit'
+                  variant='contained'
+                  size='large'
+                  color='primary'
+                  fullWidth={true}
+                >
+                  Sign up
+                </Button>
               </Grid>
 
             </Grid>
