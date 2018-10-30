@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
 import { Link } from "react-router-dom";
-import { TextField, Button, Grid } from '@material-ui/core';
+import { TextField, Button, Grid, Typography } from '@material-ui/core';
 
 
 class SignInForm extends Component {
@@ -51,7 +51,7 @@ class SignInForm extends Component {
     return (
       <Grid container justify='center' >
         <form onSubmit={this.handleSubmit}>
-          <Grid container item justify='center' >
+          <Grid container item justify='center' spacing={8} >
 
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <TextField
@@ -76,7 +76,7 @@ class SignInForm extends Component {
                 onChange={this.handleChange}
               />
             </Grid>
-
+            
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <Button
                 onClick={() => this.handleSubmit}
@@ -84,6 +84,8 @@ class SignInForm extends Component {
                 variant='contained'
                 size='large'
                 color='primary'
+                fullWidth={true}
+
               >
                 Sign in
               </Button>
