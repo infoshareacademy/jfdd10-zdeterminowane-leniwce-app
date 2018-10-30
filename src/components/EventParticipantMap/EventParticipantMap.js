@@ -4,13 +4,17 @@ import "./EventParticipantMap.css";
 
 class EventParticipantMap extends Component {
 
+  addMarker = (e) => {
+    console.log(e.latlng)
+  }
+
   
   render() {
     const position = [this.props.locY, this.props.locX];
 
     return (
       <div>
-        <Map center={position} zoom={13} style={{ height: 300 }}>
+        <Map center={position} zoom={13} style={{ height: 300 }} onClick={this.addMarker}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

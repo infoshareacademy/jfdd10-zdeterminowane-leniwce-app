@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import EventSearcherResults from '../EventSearcherResults/EventSearcherResults'
 import EventSearcherForm from '../EventSearcherForm/EventSearcherForm';
 import { Grid, Paper } from '@material-ui/core';
-import UserSignUp from '../UserSignUp/UserSignUp'
+
 
 class EventSearcher extends Component {
 
@@ -30,7 +30,7 @@ class EventSearcher extends Component {
     return (
       <>
         <EventSearcherForm getSearchQuery={this.setSearchQuery} />
-        <UserSignUp/>
+        
         {/* {
           this.state.query &&
           <p>

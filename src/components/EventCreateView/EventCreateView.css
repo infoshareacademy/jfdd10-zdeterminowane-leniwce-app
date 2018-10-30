@@ -1,0 +1,21 @@
+.eventcreate-form{
+  display:flex;
+  flex-direction: column; 
+}
+.eventcreate-form__name,.eventcreate-form__coor{
+  width: 15%;
+}
+.eventcreate-form__desc{
+  width: 85%;
+}
+.eventcreate-form__btn{
+  display:flex;
+  justify-content: space-between;
+
+}
+.eventcreate-form__Addbtm,.eventcreate-form__Canbtn{
+  width: 15%;
+}
+.eventcreate-form__coor{
+  
+}

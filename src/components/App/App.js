@@ -5,6 +5,7 @@ import UserProfileView from '../UserProfileView/UserProfileView'
 import EventView from '../EventView/EventView';
 import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import EventCreateView from '../EventCreateView/EventCreateView';
 
 
 
@@ -75,7 +76,7 @@ class App extends Component {
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
               </MenuItem>
             </Menu>
-
+            <EventCreateView/>
             <Typography paragraph></Typography>
 
             <main className='content'>
