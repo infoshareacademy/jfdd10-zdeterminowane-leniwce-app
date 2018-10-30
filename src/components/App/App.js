@@ -84,7 +84,6 @@ class App extends Component {
 
             <Typography paragraph></Typography>
 
-            <main className='content'>
               <Route exact path="/" component={HomeView} />
               {/* <Route path="/user" component={UserProfileView} /> */}
               <Route exact path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} />
@@ -99,7 +98,6 @@ class App extends Component {
               <Route path="/signIn" component={SignInForm} />
               <Route path="/signUp" component={SignUpForm} />
 
-            </main>
           </div>
         </Router>
       </>

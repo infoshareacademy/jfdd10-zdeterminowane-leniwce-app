@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebase from 'firebase'
+import { Grid, TextField, Button } from "@material-ui/core";
 
 const makeNewUser = (userId, { name, surname, email }) => {
   firebase.database().ref('users/' + userId).set({
@@ -32,19 +33,19 @@ class SignUpForm extends Component {
 
 
     if (this.state.name.length === 0) {
-      return this.setState ({
+      return this.setState({
         error: 'Please add your name'
       })
     }
 
     if (this.state.surname.length === 0) {
-      return this.setState ({
+      return this.setState({
         error: 'Please add your surname'
       })
     }
 
     if (this.state.email.length === 0) {
-      return this.setState ({
+      return this.setState({
         error: 'Please add your email'
       })
     }
@@ -70,47 +71,94 @@ class SignUpForm extends Component {
     )
   }
 
-  
+
 
 
 
   render() {
     return (
       <>
-      <form onSubmit={this.handleSubmit} className="SignUpForm">
-        {this.state.error && <p>{this.state.error.message}</p>}
-        <input
-          placeholder="Enter name"
-          name="name"
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-        <input
-          placeholder="Enter surname"
-          name="surname"
-          value={this.state.surname}
-          onChange={this.handleChange}
-        />
-        <input
-          placeholder="Enter email"
-          name="email"
-          value={this.state.email}
-          onChange={this.handleChange}
-        />
-        <input
-          placeholder="Enter password"
-          name="password"
-          type="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-        />
-        <button>Sign up</button>
-      </form>
-      {
-        this.state.error && <div style={{color: 'red'}}>{this.state.error}</div>
-      }
-      </>
-    );
+        <Grid container justify='center' >
+          <form onSubmit={this.handleSubmit} className="SignUpForm">
+            <Grid container item justify='center' spacing={8} >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+                <TextField
+                  fullWidth={true}
+                  color='secondary'
+                  variant='outlined'
+                  label="Name"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+                <TextField
+                  fullWidth={true}
+                  color='secondary'
+                  variant='outlined'
+                  label="Surname"
+                  name="surname"
+                  value={this.state.surname}
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+                <TextField
+                  fullWidth={true}
+                  color='secondary'
+                  variant='outlined'
+                  label="E-mail"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+                <TextField
+                  fullWidth={true}
+                  color='secondary'
+                  variant='outlined'
+                  label="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+                <button>Sign up</button>
+              </Grid>
+
+            </Grid>
+
+          </form>
+
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          {
+            this.state.error &&
+
+            <Button
+              style={{ color: 'red' }}
+              size='large'
+              fullWidth={true}
+              disabled
+            >
+              {`! ${this.state.error} !`}
+            </Button>
+
+          }
+        </Grid>
+      </>);
   }
 }
 

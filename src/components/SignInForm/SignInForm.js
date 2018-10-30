@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
-import { Link } from "react-router-dom";
-import { TextField, Button, Grid, Typography } from '@material-ui/core';
+import { TextField, Button, Grid } from '@material-ui/core';
 
 
 class SignInForm extends Component {
@@ -49,71 +48,66 @@ class SignInForm extends Component {
 
   render() {
     return (
-      <Grid container justify='center' >
-        <form onSubmit={this.handleSubmit}>
-          <Grid container item justify='center' spacing={8} >
+      <>
+        <Grid container justify='center' >
+          <form onSubmit={this.handleSubmit}>
+            <Grid container item justify='center' spacing={8} >
 
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <TextField
-                fullWidth={true}
-                color='secondary'
-                variant='outlined'
-                label='e-mail'
-                name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <TextField
+                  fullWidth={true}
+                  color='secondary'
+                  variant='outlined'
+                  label='E-mail'
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </Grid>
 
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <TextField
-                fullWidth={true}
-                variant='outlined'
-                label="Password"
-                name="password"
-                type="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
-            </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <TextField
+                  fullWidth={true}
+                  variant='outlined'
+                  label="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+              </Grid>
 
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Button
-                onClick={() => this.handleSubmit}
-                type='submit'
-                variant='contained'
-                size='large'
-                color='primary'
-                fullWidth={true}
-
-              >
-                Sign in
-              </Button>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              {
-                this.state.error &&
-
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Button
-                  style={{ color: 'red' }}
+                  onClick={() => this.handleSubmit}
+                  type='submit'
                   variant='contained'
                   size='large'
+                  color='primary'
                   fullWidth={true}
-                  disabled
+
                 >
-                  {`! ${this.state.error} !`}
-                </Button>
-
-              }
+                  Sign in
+              </Button>
+              </Grid>
             </Grid>
-          </Grid>
+          </form>
 
-
-
-
-        </form>
-
-      </Grid>
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          {
+            this.state.error &&
+            <Button
+              style={{ color: 'red' }}
+              size='large'
+              fullWidth={true}
+              disabled
+            >
+              {`! ${this.state.error} !`}
+            </Button>
+          }
+        </Grid>
+      </>
     );
   }
 }
