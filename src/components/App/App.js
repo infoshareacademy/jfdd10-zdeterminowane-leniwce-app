@@ -11,20 +11,10 @@ import { withAuthContext } from '../../contexts/AuthContext';
 
 
 
+
 class App extends Component {
 
-  styles = {
-    root: {
-      flexGrow: 1,
-    },
-    grow: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginLeft: -12,
-      marginRight: 20,
-    },
-  };
+ 
 
   state = {
     anchorEl: null,
@@ -42,13 +32,13 @@ class App extends Component {
   render() {
     const { anchorEl } = this.state;
     const { user } = this.props.authContext;
-    
+
 
     return (
       <>
         <Router>
-          <div className={this.styles.root}>
-            <AppBar className='appBar' position='static'>
+          <div >
+            <AppBar position='static'>
               <Toolbar>
                 <IconButton color="inherit" aria-label="Menu" aria-owns={anchorEl ? 'simple-menu' : null}
                   aria-haspopup="true"
@@ -57,12 +47,14 @@ class App extends Component {
                   </MenuIcon>
                 </IconButton>
 
-                <Typography variant="title" color="inherit" >
+                <Typography variant="title" color="inherit" style={{flexGrow: 1}}>
                   Lazyness Radar
                 </Typography>
 
+                <div>
+                  <Auth />
+                </div>
 
-                <Auth />
 
 
               </Toolbar>
