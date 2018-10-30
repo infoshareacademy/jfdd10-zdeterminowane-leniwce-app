@@ -76,7 +76,7 @@ class SignInForm extends Component {
                 onChange={this.handleChange}
               />
             </Grid>
-            
+
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <Button
                 onClick={() => this.handleSubmit}
@@ -90,16 +90,29 @@ class SignInForm extends Component {
                 Sign in
               </Button>
             </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              {
+                this.state.error &&
 
+                <Button
+                  style={{ color: 'red' }}
+                  variant='contained'
+                  size='large'
+                  fullWidth={true}
+                  disabled
+                >
+                  {`! ${this.state.error} !`}
+                </Button>
+
+              }
+            </Grid>
           </Grid>
 
 
 
 
         </form>
-        {
-          this.state.error && <div style={{ color: 'red' }}>{this.state.error}</div>
-        }
+
       </Grid>
     );
   }
