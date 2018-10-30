@@ -3,7 +3,7 @@ import { withAuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 
 
-import SignInForm from "../SignInForm/SignInForm";
+import AuthView from "../AuthView/AuthView";
 
 
 class Auth extends Component {
@@ -18,7 +18,7 @@ class Auth extends Component {
       </>
     ) : (
       <>
-        <SignInForm />
+        <AuthView />
       </>
     );
   }

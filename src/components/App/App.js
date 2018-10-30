@@ -8,6 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import Auth from '../Auth/Auth';
 import { withAuthContext } from '../../contexts/AuthContext';
+import SignInForm from '../SignInForm/SignInForm';
 
 
 
@@ -94,7 +95,8 @@ class App extends Component {
               <Route path="/user/:userId" component={UserProfileView} />
 
               <Route path="/events/:eventId" component={EventView} />
-
+              
+              <Route path="/signIn" component={SignInForm} />
               <Route path="/signUp" component={SignUpForm} />
 
             </main>
