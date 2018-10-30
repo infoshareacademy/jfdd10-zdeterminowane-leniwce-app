@@ -9,6 +9,7 @@ import SignUpForm from '../SignUpForm/SignUpForm';
 import Auth from '../Auth/Auth';
 import { withAuthContext } from '../../contexts/AuthContext';
 import SignInForm from '../SignInForm/SignInForm';
+import EventCreateView from '../EventCreateView/EventCreateView';
 
 
 
@@ -75,6 +76,11 @@ class App extends Component {
                   <NavLink to={`/user/${user.uid}`}>User Profile</NavLink>
                 </MenuItem>
               }
+              {user &&
+                <MenuItem onClick={this.handleClose}>
+                  <NavLink to={`/createEvent`}>Create Event</NavLink>
+                </MenuItem>
+              }
               <MenuItem onClick={this.handleClose}>
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
               </MenuItem>
@@ -94,7 +100,8 @@ class App extends Component {
               <Route path="/user/:userId" component={UserProfileView} />
 
               <Route path="/events/:eventId" component={EventView} />
-              
+              <Route path="/createEvent" component={EventCreateView} />
+
               <Route path="/signIn" component={SignInForm} />
               <Route path="/signUp" component={SignUpForm} />
 
