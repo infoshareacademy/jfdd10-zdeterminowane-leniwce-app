@@ -38,6 +38,8 @@ class SignInForm extends Component {
       this.state.password
     ).then(
       () => this.setState({ error: null })
+    ).then(
+      () => this.props.history.push('/')
     ).catch(
       error => {
         this.setState({ error: error.message })
@@ -66,7 +68,7 @@ class SignInForm extends Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <Button>Sign in</Button>
+          <Button onClick={() => this.handleSubmit} type='submit'>Sign in</Button>
 
          
 
