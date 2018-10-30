@@ -4,6 +4,7 @@ import UserPersonalData from "../UserPersonalData/UserPersonalData";
 import UserEvents from "../UserEvents/UserEvents";
 import { DataContextConsumer } from "../../contexts/DataContext";
 import { Grid, Paper } from "@material-ui/core";
+import BackButton from "../BackButton/BackButton";
 
 class UserProfileView extends Component {
   render() {
@@ -13,8 +14,7 @@ class UserProfileView extends Component {
           const userId = this.props.match.params.userId
           const user = getUser(userId)
           const userEventsIds = user && user.events
-          console.log(user)
-         
+
 
           if (user === undefined) {
             return (
@@ -31,9 +31,9 @@ class UserProfileView extends Component {
                   <Paper>
                     <UserPersonalData user={user} />
                   </Paper>
-
+                  <BackButton />
                   {user &&
-                    
+
                     userEventsIds &&
 
                     <UserEvents events={user.events} />

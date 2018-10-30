@@ -4,7 +4,7 @@ import EventParticipantMap from "../EventParticipantMap/EventParticipantMap";
 import EventParticipantList from "../EventParticipantList/EventParticipantList";
 
 import { DataContextConsumer } from "../../contexts/DataContext";
-import { Paper, Grid } from "@material-ui/core";
+import { Paper, Grid, Typography } from "@material-ui/core";
 
 class EventView extends Component {
   render() {
@@ -13,7 +13,7 @@ class EventView extends Component {
         {({ getEvent, users }) => {
           const eventId = this.props.match.params.eventId;
           const event = getEvent(eventId);
-          const eventParticipantsIds = event && (Object.entries(event.attendingUsers).map(([id]) => id))
+          const eventParticipantsIds = event && event.attendingUsers && (Object.entries(event.attendingUsers).map(([id]) => id))
 
           return (
             <div>
@@ -22,9 +22,12 @@ class EventView extends Component {
                   <Paper>
                     <Paper>
                       <EventDescription
-                        event={event}
+                        event={event} eventParticipantsIds={eventParticipantsIds}
                       />
+
                     </Paper>
+                    <Typography paragraph></Typography>
+
                     <Paper>
                       {
                         event &&
@@ -46,18 +49,9 @@ class EventView extends Component {
 
                       }
                     </Paper>
-
-
-
                   </Paper>
-
-
-
                 </Grid>
               </Grid>
-
-
-
             </div>
           );
         }}

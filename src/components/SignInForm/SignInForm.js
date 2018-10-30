@@ -1,8 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import firebase from 'firebase'
+import { Link } from "react-router-dom";
+
 
 class SignInForm extends Component {
   state = {
+    
     email: "",
     password: "",
     error: null
@@ -16,7 +19,6 @@ class SignInForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
 
     if (this.state.email.length === 0) {
       return this.setState ({
@@ -44,7 +46,7 @@ class SignInForm extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
       <form onSubmit={this.handleSubmit} className="SignUpForm">
         {this.state.error && <p>{this.state.error.message}</p>}
         <input
@@ -61,11 +63,18 @@ class SignInForm extends Component {
           onChange={this.handleChange}
         />
         <button>Sign in</button>
+
+        <button>
+
+        <Link to='/signUp'>Sign up</Link>
+        </button>
+
+
       </form>
       {
         this.state.error && <div style={{color: 'red'}}>{this.state.error}</div>
       }
-        </Fragment>
+        </>
     );
   }
 }

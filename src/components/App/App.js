@@ -6,7 +6,8 @@ import EventView from '../EventView/EventView';
 import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SignUpForm from '../SignUpForm/SignUpForm';
-import SignInForm from '../SignInForm/SignInForm';
+import Auth from '../Auth/Auth';
+import { withAuthContext } from '../../contexts/AuthContext';
 
 
 
@@ -40,6 +41,8 @@ class App extends Component {
 
   render() {
     const { anchorEl } = this.state;
+    const { user } = this.props.authContext;
+    
 
     return (
       <>
@@ -58,6 +61,10 @@ class App extends Component {
                   Lazyness Radar
                 </Typography>
 
+
+                <Auth />
+
+
               </Toolbar>
             </AppBar>
 
@@ -70,18 +77,16 @@ class App extends Component {
               <MenuItem onClick={this.handleClose}>
                 <NavLink exact to='/'>Home Page</NavLink>
               </MenuItem>
-              <MenuItem onClick={this.handleClose}>
-                <NavLink to="/user/-LPXNMbDwaulZ7fvhpue">User Profile</NavLink>
-              </MenuItem>
+              {user &&
+                <MenuItem onClick={this.handleClose}>
+                  <NavLink to={`/user/${user.uid}`}>User Profile</NavLink>
+                </MenuItem>
+              }
               <MenuItem onClick={this.handleClose}>
                 <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
               </MenuItem>
-              <MenuItem onClick={this.handleClose}>
-                <a href="/signUp">Sign up</a>
-              </MenuItem>
-              <MenuItem onClick={this.handleClose}>
-                <a href="/signIn">Sign in</a>
-              </MenuItem>
+
+
             </Menu>
 
             <Typography paragraph></Typography>
@@ -97,10 +102,9 @@ class App extends Component {
               <Route path="/user/:userId" component={UserProfileView} />
 
               <Route path="/events/:eventId" component={EventView} />
-              <Route path="/events/:eventId" component={EventView} />
 
               <Route path="/signUp" component={SignUpForm} />
-              <Route path="/signIn" component={SignInForm} />
+
             </main>
           </div>
         </Router>
@@ -109,4 +113,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthContext(App);

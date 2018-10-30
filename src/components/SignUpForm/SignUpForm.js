@@ -1,7 +1,16 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import firebase from 'firebase'
 
-// import "./SingUpForm.css";
+const makeNewUser = (userId, { name, surname, email }) => {
+  firebase.database().ref('users/' + userId).set({
+    first_name: name,
+    last_name: surname,
+    email: email,
+    avatar: "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/20/20fd725c79d4d4839c9f36e791248eac315f3aad_full.jpg",
+    description: 'Placeholder description on user profile'
+  })
+}
+
 
 class SignUpForm extends Component {
   state = {
@@ -20,7 +29,7 @@ class SignUpForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+
 
     if (this.state.name.length === 0) {
       return this.setState ({
@@ -46,18 +55,28 @@ class SignUpForm extends Component {
       })
     }
     firebase.auth().createUserWithEmailAndPassword(
+
       this.state.email,
       this.state.password
     ).then(
-      () =>  this.setState({ error: null })
+      ({ user }) => {
+        this.setState({ error: null });
+        makeNewUser(user.uid, this.state)
+      }
+    ).then(
+      () => this.props.history.push('/')
     ).catch(
       error => this.setState({ error: error.message })
     )
   }
 
+  
+
+
+
   render() {
     return (
-      <Fragment>
+      <>
       <form onSubmit={this.handleSubmit} className="SignUpForm">
         {this.state.error && <p>{this.state.error.message}</p>}
         <input
@@ -90,7 +109,7 @@ class SignUpForm extends Component {
       {
         this.state.error && <div style={{color: 'red'}}>{this.state.error}</div>
       }
-      </Fragment>
+      </>
     );
   }
 }
