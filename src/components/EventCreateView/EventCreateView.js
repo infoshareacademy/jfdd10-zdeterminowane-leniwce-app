@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Grid, TextField, Button } from "@material-ui/core";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
-
+// TODO make component send input data to firebase 
 
 class EventCreateView extends Component {
   state = {
