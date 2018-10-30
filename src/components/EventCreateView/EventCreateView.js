@@ -47,6 +47,8 @@ class EventCreateView extends Component {
         error: 'Invalid location'
       })
     }
+    this.setState({ error: null });
+
     console.log(this.state)
   }
 
