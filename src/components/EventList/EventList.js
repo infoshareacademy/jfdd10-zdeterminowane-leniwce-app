@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import EventListItem from '../EventListItem/EventListItem';
-
 import PropTypes from 'prop-types';
-
 import './EventList.css';
 import { List } from '@material-ui/core';
 
