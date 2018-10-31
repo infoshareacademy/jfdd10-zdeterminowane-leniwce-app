@@ -18,17 +18,18 @@ class EventView extends Component {
           return (
             <div>
               <Grid container justify='center' >
-                <Grid item lg={10} md={10} sm>
-                  <Paper>
-                    <Paper>
-                      <EventDescription
-                        event={event} eventParticipantsIds={eventParticipantsIds}
-                      />
+                
+                <Grid container justify='center' item xs={12} sm={11} md={10} lg={10} xl={10} spacing={16} alignContent='space-between' >
 
-                    </Paper>
-                    <Typography paragraph></Typography>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <EventDescription
+                      event={event} eventParticipantsIds={eventParticipantsIds}
+                    />
+                    </Grid>
+                   
 
-                    <Paper>
+
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       {
                         event &&
                         event.attendingUsers &&
@@ -41,15 +42,17 @@ class EventView extends Component {
                           ).filter(Boolean)
                           } />
                       }
-                    </Paper>
-                    <Paper>
+
+                    </Grid>
+
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       {
                         event &&
                         <EventParticipantMap eventTitle={event.title} locX={event.locationX} locY={event.locationY} />
 
                       }
-                    </Paper>
-                  </Paper>
+                    </Grid>
+                
                 </Grid>
               </Grid>
             </div>

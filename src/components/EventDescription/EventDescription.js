@@ -27,13 +27,14 @@ class EventDescription extends Component {
         return (eventParticipantsIds
           .find(eventParticipantId => user.uid === eventParticipantId) ?
           (
-            <Button variant='contained' size='large' disabled >Already joined</Button>
+            <Button fullWidth variant='contained' size='large' disabled >Already joined</Button>
           )
           :
           (
             <Button
               onClick={() => joinEvent(this.props.event.id, user.uid)}
               variant='contained'
+              fullWidth
               color='primary'
               size='large'>Join this Event</Button>
           )
@@ -43,6 +44,7 @@ class EventDescription extends Component {
           <Button
             onClick={() => joinEvent(this.props.event.id, user.uid)}
             variant='contained'
+            fullWidth
             color='primary'
             size='large'>Join this Event</Button>
         )
@@ -53,44 +55,48 @@ class EventDescription extends Component {
 
 
     return (
-      <Grid container justify='center'>
+      <Grid container justify='center' spacing={8}>
 
-        <Grid item lg={12} md={12} sm={12} xs={12} >
+        <Grid item xl={12} lg={12} md={12} sm={12} xs={12} >
           <Typography variant='h3' paragraph align='center'>
             {this.props.event.title}
           </Typography>
         </Grid>
 
-        <Grid item lg={4} md={4} sm={12} xs={12} >
+        <Grid item xl={4} lg={3} md={4} sm={12} xs={12} >
           <Typography paragraph align='center'>
             <img className="EventDescription-image" src={this.props.event.icon} alt=""
             />
           </Typography>
         </Grid>
 
-        <Grid item lg={8} md={8} sm={12}>
-          <Typography variant='h5' paragraph align='center'>
+        <Grid item xl={8} lg={9} md={8} sm={12} xs={12}>
+          <Typography variant='h5' paragraph align='left'>
             {this.props.event.fullDescription}
           </Typography>
         </Grid>
-        <Grid item sm={10} md={10} lg={10} xs={10}>
-          <Typography variant='h5' align='right'>
-            <BackButton />
-            {
-              user ?
-                (
-                  checkAttendingUsers()
-                )
-                :
-                (
-                  <Button
-                    variant='contained'
-                    color='primary'
-                    size='large'
-                    disabled>Log in to join</Button>
-                )
-            }
-          </Typography>
+
+        <Grid item xl={6} lg={6} md={6} sm={4} xs={12}>
+          <BackButton />
+        </Grid>
+
+        <Grid item xl={6} lg={6} md={6} sm={8} xs={12}>
+
+          {
+            user ?
+              (
+                checkAttendingUsers()
+              )
+              :
+              (
+                <Button
+                  variant='contained'
+                  color='primary'
+                  size='large'
+                  fullWidth
+                  disabled>Log in to join</Button>
+              )
+          }
         </Grid>
 
       </Grid>
