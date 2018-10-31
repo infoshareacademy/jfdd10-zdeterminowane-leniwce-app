@@ -11,7 +11,7 @@ class EventCreateView extends Component {
     title: '',
     description: '',
     fullDescription: '',
-    icon: '',
+    icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
     locationX: 18.8,
     locationY: 54.25
   }
@@ -19,6 +19,14 @@ class EventCreateView extends Component {
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
+    })
+  }
+
+  addMarker = (e) => {
+    console.log('lat '+e.latlng.lat+ 'lang' + e.latlng.lng)
+    this.setState({
+      locationX: e.latlng.lng,
+      locationY: e.latlng.lat
     })
   }
 
@@ -64,7 +72,11 @@ class EventCreateView extends Component {
           <form onSubmit={this.handleSubmit}>
             <Grid container item justify='center' spacing={8} >
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Map center={position} zoom={13} style={{ height: 350 }}>
+                <Map
+                onClick={this.addMarker}
+                center={position}
+                zoom={13}
+                style={{ height: 350 }}>
                   <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
