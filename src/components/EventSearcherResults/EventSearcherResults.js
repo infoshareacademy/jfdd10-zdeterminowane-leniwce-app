@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import EventList from '../EventList/EventList'
+import EventList from '../EventList/EventList';
 import { Grid } from '@material-ui/core';
+import EventMapView from '../EventMapView/EventMapView';
 // import PropTypes from 'prop-types';
 
 
@@ -25,7 +26,8 @@ class EventSearcherResults extends Component {
           </Grid>
 
          
-          <EventList eventsData={this.props.eventsData} />
+          {/* <EventList eventsData={this.props.eventsData} /> */}
+          <EventMapView eventsData={this.props.eventsData}/> 
 
         </div>
 
