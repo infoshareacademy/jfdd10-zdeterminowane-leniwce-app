@@ -70,17 +70,17 @@ class EventDescription extends Component {
           </Typography>
         </Grid>
 
-        <Grid item xl={8} lg={9} md={8} sm={12} xs={12}>
+        <Grid item xl={7} lg={8} md={7} sm={11} xs={11}>
           <Typography variant='h5' paragraph align='left'>
             {this.props.event.fullDescription}
           </Typography>
         </Grid>
 
-        <Grid item xl={6} lg={6} md={6} sm={4} xs={12}>
+        <Grid item xl={5} lg={5} md={5} sm={3} xs={11}>
           <BackButton />
         </Grid>
 
-        <Grid item xl={6} lg={6} md={6} sm={8} xs={12}>
+        <Grid item xl={5} lg={5} md={5} sm={8} xs={11}>
 
           {
             user ?

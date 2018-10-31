@@ -1,35 +1,41 @@
 import React, { Component } from "react";
 import "./EventParticipantListItem.css";
-import { Grid, Typography, Paper, Button } from "@material-ui/core";
+import { Typography, Paper, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 
 class EventParticipantListItem extends Component {
   render() {
     return (
-      <Grid item>
+      
         <Button>
-        <Paper
-        component={Link}
-        to={`/user/${this.props.id}`}
-        style={{textDecoration: 'none'}}
-        >
-          <Typography  align='center'>
+          <Paper
+            component={Link}
+            to={`/user/${this.props.id}`}
+            style={{ 
+              textDecoration: 'none',
+              width: 150
+           }}
+          >
 
-            <img src={this.props.userAvatar} alt='user avatar'></img>
+            <Typography align='center'>
 
-          </Typography>
-          <Typography color='primary' align='center'>
-            {this.props.userName}
-          </Typography>
-          <Typography color='primary' paragraph align='center'>
-            {this.props.userLastName}
+              <img src={this.props.userAvatar} alt='user avatar' style={{maxWidth: 100}}></img>
 
-          </Typography>
-        </Paper>
+            </Typography>
+
+            <Typography color='primary' align='center'>
+              {this.props.userName}
+            </Typography>
+
+            <Typography color='primary' paragraph align='center'>
+              {this.props.userLastName}
+            </Typography>
+
+          </Paper>
         </Button>
 
-      </Grid>
+      
 
     );
   }
