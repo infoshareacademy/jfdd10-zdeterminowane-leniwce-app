@@ -26,8 +26,8 @@ class EventSearcherResults extends Component {
           </Grid>
 
          
-          <EventList eventsData={this.props.eventsData} />
-          <EventMapView/> 
+          {/* <EventList eventsData={this.props.eventsData} /> */}
+          <EventMapView eventsData={this.props.eventsData}/> 
 
         </div>
 
