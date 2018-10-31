@@ -42,7 +42,7 @@ class EventView extends Component {
                       }
                     </Grid>
 
-                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <Grid item container justify='center' xs={12} sm={12} md={12} lg={12} xl={12}>
                       {
                         event &&
                         <EventParticipantMap eventTitle={event.title} locX={event.locationX} locY={event.locationY} />
