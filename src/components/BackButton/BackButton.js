@@ -4,14 +4,21 @@ import { Button } from "@material-ui/core";
 
 
 class BackButton extends Component {
- 
+
   handleBack = () => {
     this.props.history.goBack()
   }
 
-  render(){
-    return(
-     <Button onClick={this.handleBack} variant='outlined' color='primary' size='large'>Go back</Button>
+  render() {
+    return (
+      <Button fullWidth
+        onClick={this.handleBack}
+        variant='outlined'
+        color='primary'
+        size='large'
+      >
+        Go back
+      </Button>
     )
   }
 }

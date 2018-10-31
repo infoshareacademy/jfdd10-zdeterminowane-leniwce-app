@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { withAuthContext } from "../../contexts/AuthContext";
-import { Link } from "react-router-dom";
 import { Grid, TextField, Button } from "@material-ui/core";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import firebase from 'firebase'
+import BackButton from "../BackButton/BackButton";
+
 
 
 // TODO make component send input data to firebase 
@@ -77,7 +78,7 @@ class EventCreateView extends Component {
       icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
       locationX: 18.8,
       locationY: 54.25,
-      error: null
+      error: 'Event succesfully added to database, you can add another or leave this screen'
     });
 
     console.log(this.state)
@@ -164,7 +165,10 @@ class EventCreateView extends Component {
                   onChange={this.handleChange}
                 />
               </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Grid item xs={12} sm={12} md={2} lg={2} xl={2}>
+               <BackButton />
+              </Grid>
+              <Grid item xs={12} sm={12} md={10} lg={10} xl={10}>
                 <Button
                   type='submit'
                   variant='contained'
