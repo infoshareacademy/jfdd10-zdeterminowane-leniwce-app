@@ -25,20 +25,31 @@ class UserProfileView extends Component {
           }
 
           return (
-            <Grid container justify='center'>
-              <Grid item sm md={10} lg={8}>
+            <Grid container justify='center' spacing={24}>
+              <Grid item xs={12} sm={11} md={11} lg={11} xl={11}>
                 <Paper>
-                  <Paper>
+                
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                     <UserPersonalData user={user} />
-                  </Paper>
-                  <BackButton />
-                  {user &&
+                  </Grid>
 
-                    userEventsIds &&
+                  <Grid item container justify='center' xs={12} sm={12} md={12} lg={12} xl={12} >
+                    <Grid item xs={11} sm={11} md={11} lg={11} xl={11}>
 
-                    <UserEvents events={user.events} />
+                      <BackButton />
+                    </Grid>
+                  </Grid>
 
-                  }
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                    {user &&
+
+                      userEventsIds &&
+
+                      <UserEvents events={user.events} />
+
+                    }
+                  </Grid>
+
                 </Paper>
               </Grid>
             </Grid>

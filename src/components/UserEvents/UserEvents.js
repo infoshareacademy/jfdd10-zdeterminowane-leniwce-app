@@ -8,11 +8,17 @@ class UserEvents extends Component {
   render() {
     return (
       <div>
-        <Typography color='secondary' align='center' variant='h4'>
+        <Typography color='secondary' align='center' paragraph variant='h4'>
           Events that you signed up for:
-  
         </Typography>
-        <EventList eventsData={this.props.events}></EventList>
+
+        {this.props.events.length > 0 ?
+          <EventList eventsData={this.props.events} />
+          :
+          <Typography align='center' variant='h5'>
+            {' NONE ;('}
+          </Typography>
+        }
       </div>
 
 
