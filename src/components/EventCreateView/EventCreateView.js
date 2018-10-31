@@ -81,7 +81,6 @@ class EventCreateView extends Component {
       error: 'Event succesfully added to database, you can add another or leave this screen'
     });
 
-    console.log(this.state)
   }
 
 
@@ -165,10 +164,10 @@ class EventCreateView extends Component {
                   onChange={this.handleChange}
                 />
               </Grid>
-              <Grid item xs={12} sm={12} md={2} lg={2} xl={2}>
+              <Grid item xs={12} sm={3} md={2} lg={2} xl={2}>
                <BackButton />
               </Grid>
-              <Grid item xs={12} sm={12} md={10} lg={10} xl={10}>
+              <Grid item xs={12} sm={9} md={10} lg={10} xl={10}>
                 <Button
                   type='submit'
                   variant='contained'
