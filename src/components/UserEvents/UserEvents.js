@@ -15,7 +15,7 @@ class UserEvents extends Component {
         {this.props.events.length > 0 ?
           <EventList eventsData={this.props.events} />
           :
-          <Typography align='center' variant='h5'>
+          <Typography align='center' paragraph variant='h5'>
             {' NONE ;('}
           </Typography>
         }
