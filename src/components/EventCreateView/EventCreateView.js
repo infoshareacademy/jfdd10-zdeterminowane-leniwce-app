@@ -3,6 +3,8 @@ import { withAuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { Grid, TextField, Button } from "@material-ui/core";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import firebase from 'firebase'
+
 
 // TODO make component send input data to firebase 
 
@@ -13,8 +15,11 @@ class EventCreateView extends Component {
     fullDescription: '',
     icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
     locationX: 18.8,
-    locationY: 54.25
+    locationY: 54.25,
+    error: null
   }
+
+  eventRef = firebase.database().ref().child('events')
 
   handleChange = event => {
     this.setState({
@@ -23,7 +28,6 @@ class EventCreateView extends Component {
   }
 
   addMarker = (e) => {
-    console.log('lat '+e.latlng.lat+ 'lang' + e.latlng.lng)
     this.setState({
       locationX: e.latlng.lng,
       locationY: e.latlng.lat
@@ -57,7 +61,24 @@ class EventCreateView extends Component {
         error: 'Invalid location'
       })
     }
-    this.setState({ error: null });
+    let newEvent = {
+      title: this.state.title,
+      description: this.state.description,
+      fullDescription: this.state.fullDescription,
+      icon: this.state.icon,
+      locationX: this.state.locationX,
+      locationY: this.state.locationY
+    }
+    this.eventRef.push(newEvent)
+    this.setState({
+      title: '',
+      description: '',
+      fullDescription: '',
+      icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
+      locationX: 18.8,
+      locationY: 54.25,
+      error: null
+    });
 
     console.log(this.state)
   }
@@ -73,10 +94,10 @@ class EventCreateView extends Component {
             <Grid container item justify='center' spacing={8} >
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Map
-                onClick={this.addMarker}
-                center={position}
-                zoom={13}
-                style={{ height: 350 }}>
+                  onClick={this.addMarker}
+                  center={position}
+                  zoom={13}
+                  style={{ height: 350 }}>
                   <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
