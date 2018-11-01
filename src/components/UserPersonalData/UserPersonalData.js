@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./UserPersonalData.css";
-import { Paper, Avatar, Typography, Grid } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 
 class UserPersonalData extends Component {
 
@@ -16,33 +16,33 @@ class UserPersonalData extends Component {
 
   render() {
     return (
-      <Grid container justify='center'>
-
-        <Grid item lg={4} md={4} sm={4} xs={12} >
-          <Avatar src={this.props.user.avatar} style={{ width: 120, height: 120 }}></Avatar>
-
-
+      <Grid container justify='center' spacing={24}>
+        
+        <Grid item xs={11} sm={11} md={11} lg={11} xl={11}>
+          <Typography variant='h3' >
+            Your Profile
+          </Typography>
         </Grid>
 
-        <Grid item lg={8} md={8} sm={8}>
-          <Paper >
-            <Typography variant='display1'>
-              name: {this.props.user.first_name}
-            </Typography>
-          </Paper>
-          <Paper >
-            <Typography variant='display1'>
-              surname: {this.props.user.last_name}
-            </Typography>
-          </Paper>
-          <Paper >
-            <Typography paragraph variant='display1'>
-              email:  {this.props.user.email}
-            </Typography >
-          </Paper>
+        <Grid item xs={11} sm={4} md={4} lg={4} xl={4} >
+          <Typography paragraph align='center'>
+            <img src={this.props.user.avatar} alt='user avatar' style={{ width: 120, height: 120 }} />
+          </Typography>
         </Grid>
 
-        <Grid item lg={12} md={12} sm={12} xs={12}>
+        <Grid item xs={11} sm={7} md={7} lg={7} xl={7}>
+          <Typography variant='display1' >
+            name: {this.props.user.first_name}
+          </Typography>
+          <Typography variant='display1'>
+            surname: {this.props.user.last_name}
+          </Typography>
+          <Typography paragraph variant='display1'>
+            email:  {this.props.user.email}
+          </Typography >
+        </Grid>
+
+        <Grid item xs={11} sm={11} md={11} lg={11} xl={11}>
           <Typography align='center' variant='display1'>
             About me:
           </Typography>

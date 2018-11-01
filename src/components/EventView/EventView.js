@@ -4,7 +4,7 @@ import EventParticipantMap from "../EventParticipantMap/EventParticipantMap";
 import EventParticipantList from "../EventParticipantList/EventParticipantList";
 
 import { DataContextConsumer } from "../../contexts/DataContext";
-import { Paper, Grid, Typography } from "@material-ui/core";
+import { Paper, Grid } from "@material-ui/core";
 
 class EventView extends Component {
   render() {
@@ -18,17 +18,16 @@ class EventView extends Component {
           return (
             <div>
               <Grid container justify='center' >
-                <Grid item lg={10} md={10} sm>
+                <Grid container justify='center' item xs={12} sm={11} md={10} lg={10} xl={10} spacing={16} alignContent='space-between' >
                   <Paper>
-                    <Paper>
+
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       <EventDescription
                         event={event} eventParticipantsIds={eventParticipantsIds}
                       />
+                    </Grid>
 
-                    </Paper>
-                    <Typography paragraph></Typography>
-
-                    <Paper>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                       {
                         event &&
                         event.attendingUsers &&
@@ -41,16 +40,19 @@ class EventView extends Component {
                           ).filter(Boolean)
                           } />
                       }
-                    </Paper>
-                    <Paper>
+                    </Grid>
+
+                    <Grid item container justify='center' xs={12} sm={12} md={12} lg={12} xl={12}>
                       {
                         event &&
                         <EventParticipantMap eventTitle={event.title} locX={event.locationX} locY={event.locationY} />
-
                       }
-                    </Paper>
+                    </Grid>
+
                   </Paper>
+
                 </Grid>
+
               </Grid>
             </div>
           );
