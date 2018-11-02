@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 
 import PropTypes from 'prop-types';
 import './EventListItem.css';
-import { ListItem, ListItemAvatar, Avatar, ListItemText } from '@material-ui/core';
+import { GridListTile, GridListTileBar, Button } from '@material-ui/core';
 
 class EventListItem extends Component {
 
@@ -31,24 +30,17 @@ class EventListItem extends Component {
   render() {
     return (
       <>
-        <ListItem
-        button
-        divider
-        component={Link} 
-        to={`/events/${this.props.id}`}
+        <GridListTile
+          component={Button}
+          href={`/events/${this.props.id}`}
         >
-          <ListItemAvatar >
-            <Avatar src={this.props.eventIcon} />
-          </ListItemAvatar>
+          <img src={this.props.eventIcon} alt={this.props.eventTitle} />
 
-          <ListItemText
-          primaryTypographyProps={{variant: 'h4'}}
-            primary={this.props.eventTitle}
-            secondaryTypographyProps={{variant: 'subheading'}}
-            secondary={this.props.eventDescription}
+          <GridListTileBar
+            title={this.props.eventTitle}
+            subtitle={<>{this.props.eventDescription}</>}
           />
-          
-        </ListItem>
+        </GridListTile>
       </>
     )
   }
@@ -57,3 +49,4 @@ class EventListItem extends Component {
 
 
 export default EventListItem
+
