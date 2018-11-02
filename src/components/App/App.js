@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import HomeView from '../HomeView/HomeView';
 import UserProfileView from '../UserProfileView/UserProfileView'
 import EventView from '../EventView/EventView';
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Button } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import Auth from '../Auth/Auth';
@@ -49,7 +49,7 @@ class App extends Component {
                   </MenuIcon>
                 </IconButton>
 
-                <Typography variant="title" color="inherit" style={{ flexGrow: 1 }}>
+                <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
                   Lazyness Radar
                 </Typography>
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import EventListItem from '../EventListItem/EventListItem';
 import PropTypes from 'prop-types';
 import './EventList.css';
-import { List, GridList, Grid } from '@material-ui/core';
+import { GridList, Grid } from '@material-ui/core';
 
 
 
