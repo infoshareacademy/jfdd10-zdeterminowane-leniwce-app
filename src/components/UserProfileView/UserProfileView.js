@@ -15,7 +15,6 @@ class UserProfileView extends Component {
           const user = getUser(userId)
           const userEventsIds = user && user.events
 
-
           if (user === undefined) {
             return (
               <div>
@@ -28,7 +27,7 @@ class UserProfileView extends Component {
             <Grid container justify='center' spacing={24}>
               <Grid item xs={12} sm={11} md={11} lg={11} xl={11}>
                 <Paper>
-                
+
                   <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                     <UserPersonalData user={user} />
                   </Grid>
@@ -40,19 +39,14 @@ class UserProfileView extends Component {
                     </Grid>
                   </Grid>
 
-                  <Grid 
-                  
-                  
-                  item xs={12} sm={12} md={12} lg={12} xl={12}>
+                  <Grid
+                    item xs={12} sm={12} md={12} lg={12} xl={12}
+                  >
                     {user &&
-
                       userEventsIds &&
-
                       <UserEvents events={user.events} />
-
                     }
                   </Grid>
-
                 </Paper>
               </Grid>
             </Grid>

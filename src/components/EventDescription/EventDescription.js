@@ -12,8 +12,6 @@ const joinEvent = (eventId, userId) => {
   })
 }
 class EventDescription extends Component {
-
-
   render() {
     const { user } = this.props.authContext;
     const eventParticipantsIds = this.props.event && this.props.event.attendingUsers && this.props.eventParticipantsIds
@@ -49,10 +47,7 @@ class EventDescription extends Component {
             size='large'>Join this Event</Button>
         )
       }
-
     }
-
-
 
     return (
       <Grid container justify='center' spacing={8}>
@@ -81,7 +76,6 @@ class EventDescription extends Component {
         </Grid>
 
         <Grid item xl={5} lg={5} md={5} sm={8} xs={11}>
-
           {
             user ?
               (
@@ -98,7 +92,6 @@ class EventDescription extends Component {
               )
           }
         </Grid>
-
       </Grid>
     );
   }

@@ -4,7 +4,6 @@ import EventList from '../EventList/EventList'
 import { Typography } from "@material-ui/core";
 
 class UserEvents extends Component {
-
   render() {
     return (
       <div>
@@ -20,8 +19,6 @@ class UserEvents extends Component {
           </Typography>
         }
       </div>
-
-
     );
   }
 }

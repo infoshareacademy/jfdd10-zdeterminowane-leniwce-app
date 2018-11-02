@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import './EventList.css';
 import { GridList, Grid } from '@material-ui/core';
 
-
-
 class EventList extends Component {
 
   static defaultProps = {
@@ -26,10 +24,7 @@ class EventList extends Component {
   }
 
   render() {
-
-
     return (
-
 
       <GridList 
       component={Grid}
@@ -41,14 +36,11 @@ class EventList extends Component {
           this.props.eventsData.length > 0 &&
           this.props.eventsData.map(
             event => (
-
               <EventListItem key={event.id} eventIcon={event.icon} id={event.id} eventTitle={event.title} eventDescription={event.description} />
-
             )
           )
         }
       </GridList>
-
     )
   }
 }

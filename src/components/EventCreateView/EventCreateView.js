@@ -5,10 +5,6 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import firebase from 'firebase'
 import BackButton from "../BackButton/BackButton";
 
-
-
-// TODO make component send input data to firebase 
-
 class EventCreateView extends Component {
   state = {
     title: '',
@@ -38,7 +34,6 @@ class EventCreateView extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-
     if (this.state.title.length === 0) {
       return this.setState({
         error: 'Please add event title'
@@ -62,6 +57,7 @@ class EventCreateView extends Component {
         error: 'Invalid location'
       })
     }
+
     let newEvent = {
       title: this.state.title,
       description: this.state.description,
@@ -70,6 +66,7 @@ class EventCreateView extends Component {
       locationX: this.state.locationX,
       locationY: this.state.locationY
     }
+
     this.eventRef.push(newEvent)
     this.setState({
       title: '',
@@ -80,9 +77,7 @@ class EventCreateView extends Component {
       locationY: 54.25,
       error: 'Event succesfully added to database, you can add another or leave this screen'
     });
-
   }
-
 
   render() {
     const position = [this.state.locationY, this.state.locationX];
@@ -94,6 +89,7 @@ class EventCreateView extends Component {
           <Paper>
             <form onSubmit={this.handleSubmit}>
               <Grid container item justify='center' spacing={8} >
+
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                   <Map
                     onClick={this.addMarker}
@@ -125,7 +121,6 @@ class EventCreateView extends Component {
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-
                   <TextField
                     fullWidth={true}
                     color='secondary'
@@ -140,7 +135,6 @@ class EventCreateView extends Component {
                 </Grid>
 
                 <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
-
                   <TextField
                     fullWidth={true}
                     color='secondary'
@@ -154,7 +148,6 @@ class EventCreateView extends Component {
                 </Grid>
 
                 <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
-
                   <TextField
                     fullWidth={true}
                     color='secondary'
@@ -166,9 +159,11 @@ class EventCreateView extends Component {
                     onChange={this.handleChange}
                   />
                 </Grid>
+
                 <Grid item xs={12} sm={3} md={2} lg={2} xl={2}>
                   <BackButton />
                 </Grid>
+
                 <Grid item xs={12} sm={9} md={10} lg={10} xl={10}>
                   <Button
                     type='submit'
@@ -178,7 +173,7 @@ class EventCreateView extends Component {
                     fullWidth={true}
                   >
                     Create Event
-                </Button>
+                  </Button>
                 </Grid>
               </Grid>
 
@@ -199,7 +194,6 @@ class EventCreateView extends Component {
             >
               {`! ${this.state.error} !`}
             </Button>
-
           }
         </Grid>
       </>

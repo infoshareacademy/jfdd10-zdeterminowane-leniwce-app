@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { TextField, Grid, InputAdornment } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search'
 
-
-
 class EventSearcherForm extends Component {
 
   state = {
@@ -39,8 +37,6 @@ class EventSearcherForm extends Component {
                     </InputAdornment>
                   ),
                 }}
-
-
                 placeholder='Search for events'
                 fullWidth={true}
                 type='search'

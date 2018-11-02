@@ -3,9 +3,6 @@ import EventList from '../EventList/EventList';
 import { Grid, Button } from '@material-ui/core';
 import EventMapView from '../EventMapView/EventMapView';
 
-// import PropTypes from 'prop-types';
-
-
 class EventSearcherResults extends Component {
 
   static defaultProps = {
@@ -72,11 +69,7 @@ class EventSearcherResults extends Component {
               <EventMapView eventsData={this.props.eventsData} />
             </Grid>
           }
-
-
-
         </div>
-
       </>
     )
   }

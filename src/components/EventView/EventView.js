@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import EventDescription from "../EventDescription/EventDescription";
 import EventParticipantMap from "../EventParticipantMap/EventParticipantMap";
 import EventParticipantList from "../EventParticipantList/EventParticipantList";
-
 import { DataContextConsumer } from "../../contexts/DataContext";
 import { Paper, Grid } from "@material-ui/core";
 
@@ -48,11 +47,8 @@ class EventView extends Component {
                         <EventParticipantMap eventTitle={event.title} locX={event.locationX} locY={event.locationY} />
                       }
                     </Grid>
-
                   </Paper>
-
                 </Grid>
-
               </Grid>
             </div>
           );

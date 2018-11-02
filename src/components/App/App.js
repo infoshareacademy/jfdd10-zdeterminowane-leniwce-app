@@ -11,9 +11,6 @@ import { withAuthContext } from '../../contexts/AuthContext';
 import SignInForm from '../SignInForm/SignInForm';
 import EventCreateView from '../EventCreateView/EventCreateView';
 
-
-
-
 class App extends Component {
 
   state = {
@@ -38,6 +35,7 @@ class App extends Component {
           <div >
             <AppBar position='static'>
               <Toolbar>
+
                 <IconButton color="inherit" aria-label="Menu" aria-owns={anchorEl ? 'simple-menu' : null}
                   aria-haspopup="true"
                   onClick={this.handleClick}>
@@ -52,8 +50,6 @@ class App extends Component {
                 <div>
                   <Auth />
                 </div>
-
-
 
               </Toolbar>
             </AppBar>
@@ -96,25 +92,21 @@ class App extends Component {
               >
                 Landing page
               </MenuItem>
-
-
             </Menu>
 
             <Typography paragraph></Typography>
 
             <Route exact path="/" component={HomeView} />
             <Route exact path="/user" component={() => <h1> You shouldnt be here</h1>} />
-
-            <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
-
             <Route path="/user/:userId" component={UserProfileView} />
 
+            <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
             <Route path="/events/:eventId" component={EventView} />
+
             <Route path="/createEvent" component={EventCreateView} />
 
             <Route path="/signIn" component={SignInForm} />
             <Route path="/signUp" component={SignUpForm} />
-
           </div>
         </Router>
       </>

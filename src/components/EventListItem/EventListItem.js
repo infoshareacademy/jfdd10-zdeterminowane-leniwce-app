@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import PropTypes from 'prop-types';
 import './EventListItem.css';
 import { GridListTile, GridListTileBar, Button } from '@material-ui/core';

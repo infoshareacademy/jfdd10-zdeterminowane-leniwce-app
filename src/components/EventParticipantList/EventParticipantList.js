@@ -17,33 +17,25 @@ class EventParticipantList extends Component {
         </Typography>
         </Grid>
         {
-
           this.props.users &&
             this.props.users.length > 0 ?
             <Grid item container xl={12} lg={12} md={12} sm={12} xs={12} justify='center' spacing={16}>
               {this.props.users.map(
                 user => (
                   <Grid item container xl={2} lg={2} md={2} sm={3} xs={12} justify='center' key={user.id}>
-
-
                     <EventParticipantListItem
-                      
+
                       userAvatar={user.avatar}
                       id={user.id}
                       userName={user.first_name}
                       userLastName={user.last_name}
                     />
-
                   </Grid>
-
                 )
               )}
-
             </Grid> : <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>None </Grid>
-
         }
       </Grid>
-
     );
   }
 }

@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
 class EventMapView extends Component {
 
   render() {
-
     const gdanskCenter = [54.352, 18.6466];
 
     return (
-
       <div style={{ marginTop: 10}}>
         <Map center={gdanskCenter} zoom={10} style={{ height: 500 }}>
           <TileLayer
