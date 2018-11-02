@@ -16,8 +16,6 @@ import EventCreateView from '../EventCreateView/EventCreateView';
 
 class App extends Component {
 
-
-
   state = {
     anchorEl: null,
   };
@@ -30,11 +28,9 @@ class App extends Component {
     this.setState({ anchorEl: null });
   };
 
-
   render() {
     const { anchorEl } = this.state;
     const { user } = this.props.authContext;
-
 
     return (
       <>
