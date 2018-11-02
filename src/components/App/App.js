@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import HomeView from '../HomeView/HomeView';
 import UserProfileView from '../UserProfileView/UserProfileView'
 import EventView from '../EventView/EventView';
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import Auth from '../Auth/Auth';
@@ -16,7 +16,7 @@ import EventCreateView from '../EventCreateView/EventCreateView';
 
 class App extends Component {
 
- 
+
 
   state = {
     anchorEl: null,
@@ -49,7 +49,7 @@ class App extends Component {
                   </MenuIcon>
                 </IconButton>
 
-                <Typography variant="title" color="inherit" style={{flexGrow: 1}}>
+                <Typography variant="title" color="inherit" style={{ flexGrow: 1 }}>
                   Lazyness Radar
                 </Typography>
 
@@ -68,21 +68,37 @@ class App extends Component {
               open={Boolean(anchorEl)}
               onClose={this.handleClose}
             >
-              <MenuItem onClick={this.handleClose}>
-                <NavLink exact to='/'>Home Page</NavLink>
+              <MenuItem
+                component={NavLink}
+                exact to='/'
+                onClick={this.handleClose}
+              >
+                Home Page
               </MenuItem>
               {user &&
-                <MenuItem onClick={this.handleClose}>
-                  <NavLink to={`/user/${user.uid}`}>User Profile</NavLink>
+                <MenuItem
+                  component={NavLink}
+                  to={`/user/${user.uid}`}
+                  onClick={this.handleClose}
+                >
+                  User Profile
                 </MenuItem>
               }
               {user &&
-                <MenuItem onClick={this.handleClose}>
-                  <NavLink to={`/createEvent`}>Create Event</NavLink>
+                <MenuItem
+                  component={NavLink}
+                  to={`/createEvent`}
+                  onClick={this.handleClose}
+                >
+                  Create Event
                 </MenuItem>
               }
-              <MenuItem onClick={this.handleClose}>
-                <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
+              <MenuItem
+                component={'a'}
+                href={"http://zdeterminowane-leniwce.jfdd10.is-academy.pl/"}
+                onClick={this.handleClose}
+              >
+                Landing page
               </MenuItem>
 
 
@@ -90,20 +106,18 @@ class App extends Component {
 
             <Typography paragraph></Typography>
 
-              <Route exact path="/" component={HomeView} />
-              {/* <Route path="/user" component={UserProfileView} /> */}
-              <Route exact path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} />
+            <Route exact path="/" component={HomeView} />
+            <Route exact path="/user" component={() => <h1> You shouldnt be here</h1>} />
 
-              {/* <Route path="/event" component={EventView} /> */}
-              <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
+            <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
 
-              <Route path="/user/:userId" component={UserProfileView} />
+            <Route path="/user/:userId" component={UserProfileView} />
 
-              <Route path="/events/:eventId" component={EventView} />
-              <Route path="/createEvent" component={EventCreateView} />
+            <Route path="/events/:eventId" component={EventView} />
+            <Route path="/createEvent" component={EventCreateView} />
 
-              <Route path="/signIn" component={SignInForm} />
-              <Route path="/signUp" component={SignUpForm} />
+            <Route path="/signIn" component={SignInForm} />
+            <Route path="/signUp" component={SignUpForm} />
 
           </div>
         </Router>
