@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import firebase from 'firebase'
 import firebasecfg from "../firebasecfg";
 
+
 const DataContext = React.createContext();
 
 firebase.initializeApp(firebasecfg);
 
-// export const DataProvider = DataContext.Provider
 export const DataContextConsumer = DataContext.Consumer;
 
 export class DataProvider extends Component {
@@ -26,8 +26,6 @@ export class DataProvider extends Component {
 
   eventsRef = firebase.database().ref().child('events');
   usersRef = firebase.database().ref().child('users');
-
-
 
   listenEvents = () => {
     this.eventsRef.on('value', snapshot => {

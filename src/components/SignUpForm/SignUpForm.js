@@ -12,7 +12,6 @@ const makeNewUser = (userId, { name, surname, email }) => {
   })
 }
 
-
 class SignUpForm extends Component {
   state = {
     name: "",
@@ -30,7 +29,6 @@ class SignUpForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
 
     if (this.state.name.length === 0) {
       return this.setState({
@@ -55,8 +53,8 @@ class SignUpForm extends Component {
         error: 'Please add your password'
       })
     }
-    firebase.auth().createUserWithEmailAndPassword(
 
+    firebase.auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
     ).then(
@@ -70,10 +68,6 @@ class SignUpForm extends Component {
       error => this.setState({ error: error.message })
     )
   }
-
-
-
-
 
   render() {
     return (
@@ -144,16 +138,13 @@ class SignUpForm extends Component {
                   Sign up
                 </Button>
               </Grid>
-
             </Grid>
-
           </form>
-
         </Grid>
+
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           {
             this.state.error &&
-
             <Button
               style={{ color: 'red' }}
               size='large'
@@ -162,10 +153,10 @@ class SignUpForm extends Component {
             >
               {`! ${this.state.error} !`}
             </Button>
-
           }
         </Grid>
-      </>);
+      </>
+    );
   }
 }
 

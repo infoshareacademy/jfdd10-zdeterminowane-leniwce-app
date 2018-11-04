@@ -3,7 +3,6 @@ import firebase from "firebase";
 
 const AuthContext = React.createContext();
 
-// export const AuthContextProvider = AuthContext.Provider
 export const AuthContextConsumer = AuthContext.Consumer;
 
 export class AuthProvider extends Component {

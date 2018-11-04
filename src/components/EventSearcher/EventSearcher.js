@@ -14,12 +14,6 @@ class EventSearcher extends Component {
       query: query
     })
 
-  // getFilteredEvents2 = () => this.state.events.filter((event) => {
-  //     let eventTitle = event.title.toLowerCase();
-  //     let eventDescription = event.description.toLowerCase();
-  //     return eventTitle.includes(this.state.query.toLowerCase()) || eventDescription.includes(this.state.query.toLowerCase())
-  //   })
-
   getFilteredEvents = () => this.props.eventsData.filter(
     event => [event.title, event.description].map(
       phrase => phrase.toLowerCase()
@@ -29,13 +23,6 @@ class EventSearcher extends Component {
     return (
       <>
         <EventSearcherForm getSearchQuery={this.setSearchQuery} />
-
-        {/* {
-          this.state.query &&
-          <p>
-            Searched for: &nbsp;<span>{this.state.query}</span>
-          </p>
-        } */}
 
         <Grid container justify='center'>
           <Grid item md={10} lg={8} sm>

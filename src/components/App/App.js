@@ -11,12 +11,7 @@ import { withAuthContext } from '../../contexts/AuthContext';
 import SignInForm from '../SignInForm/SignInForm';
 import EventCreateView from '../EventCreateView/EventCreateView';
 
-
-
-
 class App extends Component {
-
- 
 
   state = {
     anchorEl: null,
@@ -30,11 +25,9 @@ class App extends Component {
     this.setState({ anchorEl: null });
   };
 
-
   render() {
     const { anchorEl } = this.state;
     const { user } = this.props.authContext;
-
 
     return (
       <>
@@ -42,6 +35,7 @@ class App extends Component {
           <div >
             <AppBar position='static'>
               <Toolbar>
+
                 <IconButton color="inherit" aria-label="Menu" aria-owns={anchorEl ? 'simple-menu' : null}
                   aria-haspopup="true"
                   onClick={this.handleClick}>
@@ -49,15 +43,13 @@ class App extends Component {
                   </MenuIcon>
                 </IconButton>
 
-                <Typography variant="title" color="inherit" style={{flexGrow: 1}}>
+                <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
                   Lazyness Radar
                 </Typography>
 
                 <div>
                   <Auth />
                 </div>
-
-
 
               </Toolbar>
             </AppBar>
@@ -68,43 +60,53 @@ class App extends Component {
               open={Boolean(anchorEl)}
               onClose={this.handleClose}
             >
-              <MenuItem onClick={this.handleClose}>
-                <NavLink exact to='/'>Home Page</NavLink>
+              <MenuItem
+                component={NavLink}
+                exact to='/'
+                onClick={this.handleClose}
+              >
+                Home Page
               </MenuItem>
               {user &&
-                <MenuItem onClick={this.handleClose}>
-                  <NavLink to={`/user/${user.uid}`}>User Profile</NavLink>
+                <MenuItem
+                  component={NavLink}
+                  to={`/user/${user.uid}`}
+                  onClick={this.handleClose}
+                >
+                  User Profile
                 </MenuItem>
               }
               {user &&
-                <MenuItem onClick={this.handleClose}>
-                  <NavLink to={`/createEvent`}>Create Event</NavLink>
+                <MenuItem
+                  component={NavLink}
+                  to={`/createEvent`}
+                  onClick={this.handleClose}
+                >
+                  Create Event
                 </MenuItem>
               }
-              <MenuItem onClick={this.handleClose}>
-                <a href="http://zdeterminowane-leniwce.jfdd10.is-academy.pl/">Landing page</a>
+              <MenuItem
+                component={'a'}
+                href={"http://zdeterminowane-leniwce.jfdd10.is-academy.pl/"}
+                onClick={this.handleClose}
+              >
+                Landing page
               </MenuItem>
-
-
             </Menu>
 
             <Typography paragraph></Typography>
 
-              <Route exact path="/" component={HomeView} />
-              {/* <Route path="/user" component={UserProfileView} /> */}
-              <Route exact path="/user" component={() => <h1> When UserProfileView is ready, replace this in App</h1>} />
+            <Route exact path="/" component={HomeView} />
+            <Route exact path="/user" component={() => <h1> You shouldnt be here</h1>} />
+            <Route path="/user/:userId" component={UserProfileView} />
 
-              {/* <Route path="/event" component={EventView} /> */}
-              <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
+            <Route exact path="/events" component={() => <h1> You shouldnt be here </h1>} />
+            <Route path="/events/:eventId" component={EventView} />
 
-              <Route path="/user/:userId" component={UserProfileView} />
+            <Route path="/createEvent" component={EventCreateView} />
 
-              <Route path="/events/:eventId" component={EventView} />
-              <Route path="/createEvent" component={EventCreateView} />
-
-              <Route path="/signIn" component={SignInForm} />
-              <Route path="/signUp" component={SignUpForm} />
-
+            <Route path="/signIn" component={SignInForm} />
+            <Route path="/signUp" component={SignUpForm} />
           </div>
         </Router>
       </>

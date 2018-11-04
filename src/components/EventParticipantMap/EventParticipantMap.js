@@ -4,8 +4,6 @@ import "./EventParticipantMap.css";
 import { Grid } from "@material-ui/core";
 
 class EventParticipantMap extends Component {
-
-
   render() {
     const position = [this.props.locY, this.props.locX];
 
@@ -24,7 +22,6 @@ class EventParticipantMap extends Component {
             </Marker>
           </Map>
         </div>
-
       </Grid>
     );
   }

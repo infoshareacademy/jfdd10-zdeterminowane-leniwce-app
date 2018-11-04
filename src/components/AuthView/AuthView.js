@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { withAuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
-
-
 import { Button } from "@material-ui/core";
 
 

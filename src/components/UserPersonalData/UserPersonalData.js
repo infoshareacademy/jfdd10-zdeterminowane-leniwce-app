@@ -31,19 +31,19 @@ class UserPersonalData extends Component {
         </Grid>
 
         <Grid item xs={11} sm={7} md={7} lg={7} xl={7}>
-          <Typography variant='display1' >
+          <Typography variant='h4' >
             name: {this.props.user.first_name}
           </Typography>
-          <Typography variant='display1'>
+          <Typography variant='h4'>
             surname: {this.props.user.last_name}
           </Typography>
-          <Typography paragraph variant='display1'>
+          <Typography paragraph variant='h4'>
             email:  {this.props.user.email}
           </Typography >
         </Grid>
 
         <Grid item xs={11} sm={11} md={11} lg={11} xl={11}>
-          <Typography align='center' variant='display1'>
+          <Typography align='center' variant='h4'>
             About me:
           </Typography>
 

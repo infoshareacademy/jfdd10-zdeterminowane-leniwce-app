@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import { TextField, Button, Grid } from '@material-ui/core';
 
-
 class SignInForm extends Component {
   state = {
 
