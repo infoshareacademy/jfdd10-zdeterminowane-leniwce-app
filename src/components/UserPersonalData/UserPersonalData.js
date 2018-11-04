@@ -17,10 +17,10 @@ class UserPersonalData extends Component {
   render() {
     return (
       <Grid container justify='center' spacing={24}>
-        
+
         <Grid item xs={11} sm={11} md={11} lg={11} xl={11}>
           <Typography variant='h3' >
-            Your Profile
+            PROFILE
           </Typography>
         </Grid>
 
