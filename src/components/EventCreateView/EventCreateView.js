@@ -9,10 +9,9 @@ class EventCreateView extends Component {
   state = {
     title: '',
     description: '',
-    fullDescription: '',
     icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
-    locationX: 18.8,
-    locationY: 54.25,
+    locationX: 18.621165392381958,
+    locationY: 54.3541553799043,
     error: null
   }
 
@@ -61,7 +60,7 @@ class EventCreateView extends Component {
     let newEvent = {
       title: this.state.title,
       description: this.state.description,
-      fullDescription: this.state.fullDescription,
+      fullDescription: this.state.description,
       icon: this.state.icon,
       locationX: this.state.locationX,
       locationY: this.state.locationY
@@ -71,10 +70,7 @@ class EventCreateView extends Component {
     this.setState({
       title: '',
       description: '',
-      fullDescription: '',
       icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
-      locationX: 18.8,
-      locationY: 54.25,
       error: 'Event succesfully added to database, you can add another or leave this screen'
     });
   }
