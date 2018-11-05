@@ -87,12 +87,6 @@ class EventCreateView extends Component {
         });
       });
     });
-
-    
-
-
-    
-    
   }
 
   render() {
