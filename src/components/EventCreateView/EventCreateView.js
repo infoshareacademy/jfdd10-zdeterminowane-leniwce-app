@@ -12,6 +12,7 @@ class EventCreateView extends Component {
     icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
     locationX: 18.621165392381958,
     locationY: 54.3541553799043,
+    file: null,
     error: null
   }
 
@@ -29,9 +30,18 @@ class EventCreateView extends Component {
       locationY: e.latlng.lat
     })
   }
+  
+  handleFileChange = event => {
+    this.setState({
+      file: event.target.files[0]
+    });
+  };
 
   handleSubmit = event => {
     event.preventDefault();
+    const file = this.state.file;
+    var storageRef = firebase.storage().ref('/images');
+    var thisRef = storageRef.child(file.name);
 
     if (this.state.title.length === 0) {
       return this.setState({
@@ -56,23 +66,39 @@ class EventCreateView extends Component {
         error: 'Invalid location'
       })
     }
+    console.log(file.name)
+    console.log(this.state.title);
 
-    let newEvent = {
-      title: this.state.title,
-      description: this.state.description,
-      fullDescription: this.state.description,
-      icon: this.state.icon,
-      locationX: this.state.locationX,
-      locationY: this.state.locationY
-    }
-
-    this.eventRef.push(newEvent)
-    this.setState({
-      title: '',
-      description: '',
-      icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
-      error: 'Event succesfully added to database, you can add another or leave this screen'
+    thisRef.put(file).then((snapshot) => {
+      console.log("Uploaded a blob or file!");
+      console.log(this.state.title);
+      //get request to get URL for uploaded file
+      thisRef.getDownloadURL().then((url) => {
+        console.log(this.state.title);
+        console.log(url);
+        let newEvent = {
+          title: this.state.title,
+          description: this.state.description,
+          fullDescription: this.state.description,
+          icon: url,
+          locationX: this.state.locationX,
+          locationY: this.state.locationY
+        }
+        this.eventRef.push(newEvent);
+        this.setState({
+          title: '',
+          description: '',
+          icon: 'http://dummyimage.com/250x250.jpg/dddddd/000000',
+          error: 'Event succesfully added to database, you can add another or leave this screen'
+        });
+      });
     });
+
+    
+
+
+    
+    
   }
 
   render() {
@@ -83,7 +109,7 @@ class EventCreateView extends Component {
         <Grid container justify='center' spacing={8} >
 
           <Paper>
-            <form onSubmit={this.handleSubmit}>
+            <form encType='multipart/form-data' onSubmit={this.handleSubmit}>
               <Grid container item justify='center' spacing={8} >
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -127,6 +153,16 @@ class EventCreateView extends Component {
                     rows='3'
                     value={this.state.description}
                     onChange={this.handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                  <TextField
+                    fullWidth={true}
+                    color='secondary'
+                    variant='outlined'
+                    type='file'
+                    name="file"
+                    onChange={this.handleFileChange}
                   />
                 </Grid>
 
