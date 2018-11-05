@@ -66,16 +66,10 @@ class EventCreateView extends Component {
         error: 'Invalid location'
       })
     }
-    console.log(file.name)
-    console.log(this.state.title);
 
     thisRef.put(file).then((snapshot) => {
-      console.log("Uploaded a blob or file!");
-      console.log(this.state.title);
       //get request to get URL for uploaded file
       thisRef.getDownloadURL().then((url) => {
-        console.log(this.state.title);
-        console.log(url);
         let newEvent = {
           title: this.state.title,
           description: this.state.description,
