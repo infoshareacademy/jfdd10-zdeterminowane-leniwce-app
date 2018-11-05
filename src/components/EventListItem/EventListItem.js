@@ -33,7 +33,8 @@ class EventListItem extends Component {
           component={Button}
           href={`/events/${this.props.id}`}
         >
-          <img src={this.props.eventIcon} alt={this.props.eventTitle} />
+        <div style={{ backgroundImage:`url(${this.props.eventIcon})`, width:250, height: 250}}></div>
+          {/* <img src={this.props.eventIcon} alt={this.props.eventTitle} /> */}
 
           <GridListTileBar
             title={this.props.eventTitle}
